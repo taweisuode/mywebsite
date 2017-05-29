@@ -8,6 +8,7 @@
  */
 class Dispath
 {
+    private static $ignore_module = true;
     private static $static_resource;
     public  static $current_module;
     public  static $current_controller;
@@ -20,9 +21,16 @@ class Dispath
         {
             $key = array_search("ppf",$module_controller_action);
         }
-        $module     = !empty($module_controller_action[$key+1]) ? $module_controller_action[1] : 'Index';
-        $controller = !empty($module_controller_action[$key+2]) ? $module_controller_action[2] : 'Index';
-        $action     = !empty($module_controller_action[$key+3]) ? $module_controller_action[3] : 'index';
+        //这里加入默认忽略module方式
+        if($this::$ignore_module == true && count($module_controller_action) == 3) {
+            $module = 'Index';
+            $controller = !empty($module_controller_action[$key+1]) ? $module_controller_action[1] : 'Index';
+            $action     = !empty($module_controller_action[$key+2]) ? $module_controller_action[2] : 'index';
+        }else {
+            $module     = !empty($module_controller_action[$key+1]) ? $module_controller_action[1] : 'Index';
+            $controller = !empty($module_controller_action[$key+2]) ? $module_controller_action[2] : 'Index';
+            $action     = !empty($module_controller_action[$key+3]) ? $module_controller_action[3] : 'index';
+        }
         $this::$current_module = $module;
         $this::$current_controller = $controller;
         $this::$current_action = $action;
