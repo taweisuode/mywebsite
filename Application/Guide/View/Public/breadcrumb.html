@@ -1,0 +1,19 @@
+	<!-- #section:basics/content.breadcrumbs -->
+	{if !empty($nave_title)}
+    <div class="breadcrumbs" id="breadcrumbs">
+    	<ul class="breadcrumb">
+			<i class="ace-icon fa fa-home home-icon"></i>
+			{foreach from=$nave_title key=k item=v}
+       			<li {if $v['url'] == ''}class="active"{/if}>
+       				{if !empty($v['url'])}
+            		<a href="{$v['url']}">{$v['name']}</a>
+            		{else}
+            			{$v['name']}
+            		{/if}
+           		</li>
+			{/foreach}
+       	</ul><!-- /.breadcrumb -->
+   	</div>
+	{/if}
+    <!-- /section:basics/content.breadcrumbs -->
+

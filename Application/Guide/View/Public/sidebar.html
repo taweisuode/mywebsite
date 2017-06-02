@@ -1,0 +1,78 @@
+	<!-- #section:basics/sidebar -->
+	<div id="sidebar" class="sidebar responsive">
+		<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+			<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+				<button class="btn btn-success">
+					<i class="ace-icon fa fa-signal"></i>
+				</button>
+
+				<button class="btn btn-info">
+					<i class="ace-icon fa fa-pencil"></i>
+				</button>
+
+				<!-- #section:basics/sidebar.layout.shortcuts -->
+				<button class="btn btn-warning">
+					<i class="ace-icon fa fa-users"></i>
+				</button>
+
+				<button class="btn btn-danger">
+					<i class="ace-icon fa fa-cogs"></i>
+				</button>
+				<!-- /section:basics/sidebar.layout.shortcuts -->
+			</div>
+
+			<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+				<span class="btn btn-success"></span>
+				<span class="btn btn-info"></span>
+				<span class="btn btn-warning"></span>
+				<span class="btn btn-danger"></span>
+			</div>
+		</div><!-- /.sidebar-shortcuts -->
+
+		<ul class="nav nav-list">
+			{function name=menu}
+			<ul class="submenu">
+			{foreach $data as $entry}
+				<li {if !empty($entry.active)}class=""{/if}>
+				<a href="{$entry.url}" {strip}
+					{if !empty($entry.submenu)}
+						class="dropdown-toggle"
+					{elseif empty($entry.is_blank)} 
+						onclick="$.cookie('curmenu', '{$entry.url}', {ldelim}path:'/'{rdelim});forward('{$entry.url}');return false;"
+					{/if}{/strip}>
+					<i class="menu-icon fa fa-caret-right icon-double-angle-right"></i> {$entry.title}
+				{if !empty($entry.submenu)}
+					<b class="arrow fa fa-angle-down icon-angle-right"></b>
+				</a>
+					{call name=menu data=$entry.submenu}
+				{else}
+				</a>
+				{/if}
+				<b class="arrow"></b>
+				</li>
+			  {/foreach}
+			  </ul>
+			{/function}
+			{foreach $CI->menu_list as $entry}	
+			<li {if !empty($entry.active)}class="active open"{/if}>
+				<a href="{$entry.url}" {if !empty($entry.submenu)}class="dropdown-toggle"{/if}>
+					<i class="menu-icon fa {if !empty($entry.icon_class)}{$entry.icon_class}{else}fa-tag{/if}"></i>
+					<span class="menu-text">{$entry.title}</span>
+					<b class="arrow fa fa-angle-down icon-angle-right"></b>
+				</a>
+				{if !empty($entry.submenu)}
+					{call name=menu data=$entry.submenu}
+				{/if}
+				<b class="arrow"></b>
+			</li>
+			{/foreach}
+
+		</ul><!-- /.nav-list -->
+
+		<!-- #section:basics/sidebar.layout.minimize -->
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+		<!-- /section:basics/sidebar.layout.minimize -->
+	</div>
+	<!-- /section:basics/sidebar -->
