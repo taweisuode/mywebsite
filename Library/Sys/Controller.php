@@ -43,7 +43,7 @@ class Controller
     }
 
     /**
-     * $desc 显示错误信息
+     * @desc 显示错误信息
      */
     private function ShowErrorHtml(Throwable $e = null) {
         $html = <<< HTML

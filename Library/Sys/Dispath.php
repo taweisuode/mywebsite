@@ -31,6 +31,10 @@ class Dispath
             $controller = !empty($module_controller_action[$key+2]) ? $module_controller_action[2] : 'Index';
             $action     = !empty($module_controller_action[$key+3]) ? $module_controller_action[3] : 'index';
         }
+        if(strstr($action,".html") || strstr($action,".php")) {
+            $actionArr = explode(".",$action);
+            $action = $actionArr[0];
+        }
         $this::$current_module = $module;
         $this::$current_controller = $controller;
         $this::$current_action = $action;
