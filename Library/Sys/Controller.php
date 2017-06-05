@@ -36,9 +36,24 @@ class Controller
             }   
         }*/
     }
-    public function setExceptionHandler(Exception $e) {
+    public function setExceptionHandler(Throwable $e = null) {
         $this->hasException = true;
-        $this->showError($e);
+        $this->ShowErrorHtml($e);
+
+    }
+
+    /**
+     * $desc 显示错误信息
+     */
+    private function ShowErrorHtml(Throwable $e = null) {
+        $html = <<< HTML
+        <pre class="alert alert-danger" style="color:#a94442;background-color: #f2dede;border-color: #ebccd1;font-size: 15px">
+        <h2 class="error-danger" style="text-align:center">出错了</h2>
+        错误描述: {$e->getMessage()}<br>
+        文件位置: {$e->getFile()}第{$e->getLine()}行<br>
+        信息栈:<br><br><div style="padding-left: 72px">{$e->getTraceAsString()}</div>
+HTML;
+        echo $html;die;
     }
     public function showError($msg, $code = -1) {
         $code   = $msg->getCode();
