@@ -1,153 +1,41 @@
+
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta charset="utf-8" />
-		{if !empty($headTitle)}
-			<title>{$headTitle}</title>
-		{else}
-			<title>发现旅行管理系统</title>
-		{/if}
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>欢迎使用 ppf 中文手册|用户手册|用户指南|中文文档</title>
 
-		<link rel="stylesheet" href="/assets/third_party/ace/css/chosen.css" />
 
-		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="/assets/third_party/bootstrap/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="/assets/third_party/ace/css/font-awesome.min.css" />
 
-		<!-- page specific plugin styles -->
-		<link rel="stylesheet" href="/assets/third_party/bootstrap-datepicker/css/datepicker.css" />
 
-		<!-- text fonts -->
-		<link rel="stylesheet" href="/assets/third_party/ace/css/ace-fonts.css" />
+    <link rel="shortcut icon" href="/Public/Js/ci-icon.ico" />
 
-		<!-- ace styles -->
-		<link rel="stylesheet" href="/assets/third_party/ace/css/ace.min.css" id="main-ace-style" />
-		<link rel="stylesheet" href="/assets/third_party/ace/css/ace-adjust.css" />
 
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="/assets/third_party/ace/css/ace-part2.min.css" />
-		<![endif]-->
 
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="/assets/third_party/ace/css/ace-ie.min.css" />
-		<![endif]-->
+    <link href="/Public/Css/blog/fonts.css" rel="stylesheet" type="text/css" />
 
-		<!-- inline styles related to this page -->
-		<!-- ace settings handler -->
-		<script src="/assets/third_party/ace/js/ace-extra.min.js"></script>
 
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
-		<!--[if lte IE 8]>
-		<script src="/assets/third_party/ace/js/html5shiv.min.js"></script>
-		<script src="/assets/third_party/ace/js/respond.min.js"></script>
-		<![endif]-->
-		<style>
-			#sample-table-1 tr td{
-				line-height: 1.8;}
-		</style>
-		<!-- basic scripts -->
-		<!--[if !IE]> -->
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='/assets/third_party/jquery/jquery-1.10.2.js'>"+"<"+"/script>");
-		</script>
-		<!-- <![endif]-->
-		<!--[if IE]> -->
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='/assets/third_party/jquery/jquery1x.js'>"+"<"+"/script>");
-		</script>
-		<!-- <![endif]-->
-    	<script src="/assets/third_party/jquery/jquery.cookie.js"></script>
-		<script src="/assets/third_party/angularjs/js/angular.js"></script>
-		<script type="text/javascript">
-        	if('ontouchstart' in document.documentElement) document.write("<script src='/assets/third_party/jquery/jquery.mobile.custom.js'>"+"<"+"/script>");
-    	</script>
-		<script src="/assets/js/ng-app.js"></script>
-		<link rel="stylesheet" href="/assets/css/uploadify.css" />
-		<script src="/assets/js/common.js"></script>
-		<script src="/assets/third_party/jquery/jquery.chosen.js"></script>
-		{if !empty($js_assets)}
-            {foreach $js_assets as $js_asset}
-                <script src="/js/{$js_asset}"></script>
-            {/foreach}
-        {/if}
-        <script type="text/javascript">
-    		var ticket_cookie_name	= "{if !empty($ticket_cookie_name)}{$ticket_cookie_name}{else}fxticket{/if}";
-    	</script>
-	</head>
 
-	<body class="no-skin">
-		<!-- #section:basics/navbar.layout -->
-		<div id="navbar" class="navbar navbar-default">
 
-			<div class="navbar-container" id="navbar-container">
-				<!-- #section:basics/sidebar.mobile.toggle -->
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
-					<span class="sr-only">Toggle sidebar</span>
 
-					<span class="icon-bar"></span>
 
-					<span class="icon-bar"></span>
 
-					<span class="icon-bar"></span>
-				</button>
 
-				<!-- /section:basics/sidebar.mobile.toggle -->
-				<div class="navbar-header pull-left">
-					<!-- #section:basics/navbar.layout.brand -->
-					<a href="#" class="navbar-brand">
-						<small>
-							<i class="fa fa-leaf"></i>
-							发现旅行后台
-						</small>
-					</a>
+    <link rel="stylesheet" href="/Public/Css/blog/theme.css" type="text/css" />
 
-					<!-- /section:basics/navbar.layout.brand -->
 
-					<!-- #section:basics/navbar.toggle -->
 
-					<!-- /section:basics/navbar.toggle -->
-				</div>
+    <link rel="stylesheet" href="/Public/Css/blog/theme_cn.css" type="text/css" />
+    <link rel="top" title="CodeIgniter 3.1.3 中文手册|用户手册|用户指南|中文文档" href="../index.html"/>
+    <link rel="up" title="CodeIgniter 概览" href="index.html"/>
+    <link rel="next" title="CodeIgniter 特性" href="features.html"/>
+    <link rel="prev" title="CodeIgniter 将从这里开始" href="getting_started.html"/>
 
-				<!-- #section:basics/navbar.dropdown -->
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-						<!-- #section:basics/navbar.user_menu -->
-						<li class="light-blue">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<span class="user-info">
-									<small>{$operator_name}</small>
-								</span>
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
 
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="{$smarty.const.APP_URL}/account/modify_password">
-										<i class="ace-icon fa fa-pencil-square-o"></i>
-										修改密码
-									</a>
-								</li>
-								<li>
-									<a href="{$smarty.const.APP_URL}/account/logout">
-										<i class="ace-icon fa fa-power-off"></i>
-										退出
-									</a>
-								</li>
-							</ul>
-						</li>
+    <script src="/Public/Js/blog/modernizr.2.6.2.min.js"></script>
 
-						<!-- /section:basics/navbar.user_menu -->
-					</ul>
-				</div>
-
-				<!-- /section:basics/navbar.dropdown -->
-			</div><!-- /.navbar-container -->
-		</div>
-
-		<!-- /section:basics/navbar.layout -->
-		<div class="main-container" id="main-container">
+</head>

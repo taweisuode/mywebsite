@@ -1,388 +1,75 @@
 {include Public/header.html}
-{include Public/sidebar.html}
-<div class="main-content">
-    {include Public/breadcrumb.html}
-    <div class="page-content">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="search-pane padding-top-10">
-                    <form class="form-horizontal" method="get" action="/problem_order/index">
-                        <div class="row">
-                            <div class="col-xs-1 control-label padding-top-10 no-padding-left no-padding-right">处理状态：</div>
-                            <div class="col-xs-11">
-                                <ul class="nav nav-pills product-nav-pills no-margin-left no-padding-left">
-                                    <li {if empty($smarty.get)}class="active"{/if}>
-                                    <a href="/problem_order/index">全部</a>
-                                    </li>
-                                    {foreach from=$order_status key=k item=v}
-                                    <li {if $k==$deal_status}class="active"{/if}>
-                                        <a href="/problem_order/index?deal_status={$k}&oid={$oid}&passenger_name={$passenger_name}&product_title={$product_title}&nickname={$nickname}&frt_recev_mobile={$frt_recev_mobile}&dest_id={$dest_id}&depart_date={$depart_date}&return_date={$return_date}">{$v}</a>
-                                    </li>
-                                    {/foreach}
-                                </ul>
-                                <input type="hidden" name="deal_status" value="{$deal_status}"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-1 control-label padding-top-10 no-padding-left no-padding-right">目的地：</div>
-                            <div class="col-xs-2">
-                                <select name="dest_id" class="form-control search">
-                                    <option value="">请选择</option>
-                                    {foreach from=$destination key=k item=v}
-                                    <option value="{$k}" {if $dest_id==$k}selected{/if}>{$v}</option>
-                                    {/foreach}
-                                </select>
-                            </div>
-                            <div class="col-xs-1 hr4 control-label no-padding-left no-padding-right">出发日期：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search date-picker" name="depart_date" id="depart_date" value="{$depart_date}" data-date-format="yyyy-mm-dd" />
-                            </div>
-                            <div class="col-xs-1 hr4 control-label no-padding-left no-padding-right">到：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search date-picker" name="return_date" id="return_date" value="{$return_date}" data-date-format="yyyy-mm-dd" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-1 hr4 control-label no-padding-left no-padding-right">下单时间：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search date-picker" name="order_date_from" id="order_date_from" value="{$order_date_from}" data-date-format="yyyy-mm-dd" />
-                            </div>
-                            <div class="col-xs-1 hr4 control-label no-padding-left no-padding-right">到：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search date-picker" name="order_date_to" id="order_date_to" value="{$order_date_to}" data-date-format="yyyy-mm-dd" />
-                            </div>
-                        </div>
-                        <!--                <div class="col-xs-1 hr4 control-label no-padding-right">目的地：</div>
-                                            <div class="col-xs-1 control-label no-padding-right">
-                                                <input type="text" class="form-control search" name="destination" value="{$destination}" />
-                                            </div>-->
-                        <div class="row">
-                            <div class="col-xs-1 hr4 control-label no-padding-right">订单号：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search" name="oid" value="{$oid}" />
-                            </div>
-                            <div class="col-xs-1 hr4 control-label no-padding-right">旅客姓名：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search" name="passenger_name" value="{$passenger_name}" />
-                            </div>
-                            <div class="col-xs-1 hr4 control-label no-padding-right">产品名称：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search" name="product_title" value="{$product_title}" />
-                            </div>
+<body class="wy-body-for-nav" role="document">
+<div id="nav2">
+    <a href="#" id="openToc">
+        <img src="data:image/jpg;base64,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" title="切换目录" alt="切换目录" />
+    </a>
+</div>
 
+<div class="wy-grid-for-nav">
+    {include Public/nav.html}
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="../index.html">CodeIgniter</a>
+        </nav>
+
+
+
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <ul class="wy-breadcrumbs">
+                        <li><a href="/" target="_blank">ppf 中国</a> &raquo; </li>
+                        <li><a href="../index.html">文档首页</a> &raquo; </li>
+
+                        <li>欢迎使用 ppf</li>
+                        <li class="wy-breadcrumbs-aside">
+
+                        </li>
+                        <div style="float:right;">
+                            <div style="text-decoration:underline;color:blue;margin-left:5px;cursor:pointer;" id="closeMe">
+                                <img title="目录" alt="toc" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-1 hr4 control-label no-padding-right">微信昵称：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search" name="nickname" value="{$nickname}" />
-                            </div>
-                            <div class="col-xs-1 hr4 control-label no-padding-right">电话：</div>
-                            <div class="col-xs-2 control-label no-padding-right">
-                                <input type="text" class="form-control search" placeholder="联系人电话" name="frt_recev_mobile" value="{$frt_recev_mobile}" />
-                            </div>
-                            <div class="col-xs-1 hr4 no-padding-right">
-                                <button class="btn btn-xs btn-info">
-                                    <i class="ace-icon fa fa-search"></i>搜索
-                                </button>&nbsp;&nbsp;
-                            </div>
-                            <div class="col-xs-1 hr4 no-padding-right">
-                                <a class="btn btn-xs btn-info" id="allNextDeal" status="0">批量稍后处理</a>
-                            </div>
-                        </div>
-                        <input type="hidden" name="status" value="{$status}" />
-                    </form>
+                    </ul>
+                    <hr/>
                 </div>
-            </div>
-            <div class="col-xs-12">
-                <table id="sample-table-1" class="table fx-diy-table table-striped table-bordered table-hover dataTable">
-                    <thead>
-                    <tr>
-                        <th width="120" class="text-center"><input type='checkbox' id='selectAll'>
-                            订单号
-                        </th>
-                        <th width="150" class="text-center">产品名称</th>
-                        <th width="100" class="text-center {if $order!='depart_date'}sort{else}sorting_{$desc}{/if}" id="sort_depart_date" onclick="sort('depart_date', '{$desc}')">出发日期</th>
-                        <th width="100" class="text-center {if $order!='createdatetime'}sort{else}sorting_{$desc}{/if}" id="sort_createdatetime" onclick="sort('createdatetime', '{$desc}')">下单日期</th>
+                <div role="main" class="document">
 
-
-
-                        <th width="120" class="text-center">姓名/性别/生日</th>
-                        <th width="100" class="text-center">护照信息</th>
-
-
-                        <th width="80" class="text-center">问题类型</th>
-                        <th width="60" class="text-center">处理状态</th>
-                        <th width="100" class="text-center">最后联系时间</th>
-                        <th width="100" class="text-center">下次联系时间</th>
-                        <th width="50" class="text-center">联系次数</th>
-                        <th width="80" class="text-center">机票票源</th>
-                        <th width="150 " class="text-center">联系信息</th>
-
-                        <th width="130" class="text-center">操作</th>
-                        <!-- 	<th width="90" class="text-center">操作</th> -->
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {foreach from=$list item=v}
-                    <tr class="text-center">
-                        <td><input name='optID' value='{$v['id']},{$v['oid']},{$v['problem_type']}'" type='checkbox'>
-                            <a href="/order/detail?oid={$v['oid']}" target="_blank">{$v['oid']}</a>
-                            {if !empty($v['discount'])}
-								<span class="yellow no-margin pointer" onclick="showCoupon(this);" style="background:#faa732;color:#fff;" data-id="{$v['discount']['id']}" data-code="{$v['discount']['code']}" data-amount="{$v['discount']['amount']}" data-originoid="{$v['discount']['origin_oid']}"
-                                      data-originfrtrecevname="{$v['discount']['username']}" data-originuserid="{$v['discount']['origin_userid']}" data-usedoid="{$v['discount']['used_oid']}" data-usedtime="{$v['discount']['used_time']}" data-ctime="{$v['discount']['ctime']}" data-expiredtime="{$v['discount']['expired_time']}" >￥{$v['discount']['amount']}</span>
-                            {/if}
-                            <p style="margin-bottom: 2px;">
-                                {if $v['platform']=='mobile'}
-                                <img src="/images/shouji.jpg" width="18px" height="18px" style="width:16px;height:16px" alt="手机浏览器下单">
-                                {/if}
-                                {if $v['platform']=='weixin'}
-                                <img src="/images/weixin.jpg" width="18px" height="18px" style="width:16px;height:16px" alt="微信下单">
-                                {/if}
-                                {if $v['channel']=='qyer'}
-                                <img src="/images/qylogo.png" width="18px" height="18px" style="width:16px;height:16px">
-                                {/if}
-                                {if $v['channel']=='gzl'}
-                                <span class="label label-info">广之旅</span>
-                                {/if}
-                                {if $v['channel']=='nanhu'}
-                                <span class="label label-info">南湖国旅</span>
-                                {/if}
-                                {if $v['channel']=='vip'}
-                                <span class="label label-info">唯品会</span>
-                                {/if}
-                                {if $v['channel']=='youpu'}
-                                <span class="label label-info">游谱旅行</span>
-                                {/if}
-                                {if $v['channel']=='ctrip'}
-                                <span class="label label-info">携程</span>
-                                {/if}
-                                {if !empty($v['leisurely'])}
-                                <span class="label label-info">逍遥行2.0</span>
-                                {/if}
-                                {if $v['xcode']==1}
-									<span style="display: inline-block;
-                                            color: #14afe8;
-                                            border: 1px solid #cccccc;
-                                            width: 18px;
-                                            height: 18px;
-                                            line-height: 16px;
-                                            text-align: center;
-                                            font-weight: 900;
-                                            background: #ffffff;">X</span>
-                                {/if}
-                            </p>
-                            <p style="margin-bottom: 2px;">
-                                {if $v['partner_rel']==2}<span class="label label-important">家人</span>{/if}
-                                {if $v['partner_rel']==3}<span class="label label-important">闺蜜</span>{/if}
-                                {if $v['partner_rel']==4}<span class="label label-important">情侣</span>{/if}
-                            </p>
-                            <p style="margin-bottom: 2px;">
-                                {if !empty($v['vip'])}<span class="label label-info">VIP</span>{/if}
-                            </p>
-                            <p style="margin-bottom: 2px;">
-                                {if $v['flight_type']==1}
-                                <span class="label label-info">团队票</span>
-                                {elseif $v['flight_type']==2}
-                                <span class="label label-info">散客票</span>
-                                {elseif $v['flight_type']==3}
-                                <span class="label label-info">世界99</span>
-                                {elseif $v['flight_type']==4}
-                                <span class="label label-info">航班管家</span>
-                                {/if}
-                            </p>
-                            <p style="margin-bottom: 2px;">
-                                {if $v['is_test']==1}<span class="label label-info">测试单</span>{/if}
-                            </p>
-
-                        </td>
-                        <td>
-                            <a href="{$url}/itinerary/{$v['product_id']}.html" target="_blank">
-                                {$v['depart_city']} - {$v['dest_name']} 【{$v['product_type']}】
-
-                            </a>
-                        </td>
-                        <td>{$v['depart_date']}{if !empty($v['leisurely'])}<br/>{$v['return_date']}{/if}</td>
-                        <td>{$v['createdatetime']|date_format:'%Y-%m-%d<br />%H:%M:%S'}</td>
-
-                        <td>
-                            {$v['name']}  {$v['sex']} <br />
-                            {$v['name_en']}
-                            <br />
-                            {$v['dateofbirth']}
-                        </td>
-                        <td>
-                            {$v['cert_type']}  <br />
-                            {$v['cert_id']}   <br />
-                            {$v['cert_expired']}
-                        </td>
-                        <td>{$v['problem_type_str']}</td>
-                        <td>{$order_status[$v['deal_status']]}</td>
-                        <td>{$v['last_contact_time']}</td>
-                        <td>{$v['next_contact_time']}</td>
-                        <td>{$v['contact_count']}</td>
-                        <td>{if $v['flight_type']==1}
-                            <span class="label label-info">团队票</span>
-                            {elseif $v['flight_type']==2}
-                            <span class="label label-info">散客票</span>
-                            {elseif $v['flight_type']==3}
-                            <span class="label label-info">世界99</span>
-                            {elseif $v['flight_type']==4}
-                            <span class="label label-info">航班管家</span>
-                            {/if}</td>
-                        <td>
-                            {if !empty($v['nickname'])}
-                            <img src="{$v['headimgurl']}" height="20" width="20" style="width: 20px;height: 20px" alt=""> {$v['nickname']} <br />
-                            {/if}
-                            {$v['frt_recev_name']}    {$v['frt_recev_mobile']}<br />
-                            {$v['frt_recev_prov']} {$v['frt_recev_city']}<br />
-                            {if !empty($v['email'])}
-                            {$v['email']}
-                            {/if}
-
-                        </td>
-
-                        <td>
-
-                            <a href="javascript:;" class = "btn btn-warning btn-xs" data-id="{$v['id']}" data-is_world="{$v['is_world']}" data-oid="{$v['oid']}" data-return_date={$v['return_date']} tag="edit_people">修改</a>
-                            <a href="javascript:;"  class = "btn btn-success btn-xs" data-id="{$v['id']}" data-oid="{$v['oid']}" data-problem_type="{$v['problem_type']}" tag="deal_next">稍后处理</a>
-                            <br /><br />
-                            {if $v['problem_type'] >= 4}
-                            <a href="javascript:;" tag="complete_children" class = "btn btn-info btn-xs" data-id="{$v['id']}" data-oid="{$v['oid']}">填写儿童监护人</a></br></br>
-                            {/if}
-                            {if $v['guardian']}
-                            <a href="javascript:;" tag="show_children" class = "btn btn-success btn-xs" data-id="{$v['id']}" data-oid="{$v['oid']}">查看儿童监护人</a></br></br>
-                            {/if}
-                            <a href="javascript:;" tag="order_log" class = "btn btn-info btn-xs" data-oid="{$v['oid']}">日志</a>
-                            {if $v['deal_status'] != '3'}
-                            <a href="javascript:;" tag="deal_finish"  class = "btn btn-success btn-xs"  data-is_completed="{$v['is_completed']}" data-is_guardian_completed="{$v['is_guardian_completed']}" data-id="{$v['id']}">处理完成</a>
-                            {/if}
-
-
-
-                        </td>
-                        <!-- <td>
-                            <a onclick="createCoupon({$v['user_id']})">生成优惠券</a>
-                            <a onclick="couponList({$v['user_id']})">查看优惠券</a>
-                            <a href="/order/detail?oid={$v['oid']}" target="_blank">查看详情</a>
-                        </td> -->
-                    </tr>
-                    {foreachelse}
-                    <tr><td colspan="10" class="red center">没有查询到数据</td></tr>
-                    {/foreach}
-                    </tbody>
-                </table>
-            </div>
-        </div><!-- /.row -->
-        {if !empty($pager)}
-        <div class="dataTables_wrapper">
-            <div class="row">
-                <div class="col-xs-12 no-padding">
-                    <div class="dataTables_paginate paging_bootstrap">
-                        {$pager}
+                    <div class="section" id="codeigniter">
+                        <h1>欢迎使用 ppf<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
+                        <ul class="simple">
+                            <li>ppf框架是一个基于mvc模式的框架</li>
+                            <li>有着最简单的路由分发以及mvc组件构成的框架。</li>
+                            <li>模仿来自于thinkphp 以及zendframe。以及加入了类似smarty的模版引擎。全方面实现了一个框架从路由分发。载入配置文件。mvc模式以及最后的模版引擎实现。</li>
+                        </ul>
+                        <div class="section" id="id1">
+                            <h2>ppf 是为谁准备的？<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+                            <p>ppf 就是你所需要的，如果...</p>
+                            <ul class="simple">
+                                <li>你想要一个小巧的框架；</li>
+                                <li>你想要学习php框架如何生成</li>
+                                <li>你想要学习php许多基础知识如何在框架中体现</li>
+                                <li>你想要学习模版引擎如何工作</li>
+                                <li>你想要加入进来，完善推广自主研发的PHP框架</li>
+                                <li>你想要触类旁通，学习市面上主流PHP框架运行原理</li>
+                            </ul>
+                        </div>
                     </div>
+
+
                 </div>
+                {include Public/footer.html}
             </div>
         </div>
-        {/if}
-    </div><!-- /.main-content -->
-    <div id="userIdModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                    <h4 class="modal-title">优惠券列表</h4>
-                </div>
-                <div class="modal-body">
-                    <form id="couponList" name="" class="form-horizontal border" method="post" novalidate autocomplete="off">
 
-                    </form>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <div class="bootbox modal bootbox-confirm" id="commIframeDialog" tabindex="-1" data-backdrop="static">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header fx-diy">
-                    <button type="button" class="close fx-diy-close"><span>&times;</span></button>
-                    <h4 class="modal-title" id="commIframeModalLabel"></h4>
-                </div>
-                <div class="modal-body">
-                    <iframe data-src="" frameborder="0" scrolling="auto"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-    {include file='public/footer.tpl' js_assets=['problem_list.js']}
-    <script src="/assets/js/freeze-table-rows-cols.js"></script>
-    <script type="text/javascript">
-        {literal}
-        $(function(){
-            var freezeCfg   = [{width:'97.5%', height:'auto', cols:1, adjustHeight:0}];
-            $('table').freezeTable(freezeCfg);});
-        {/literal}
+    </section>
 
-        $(document).ready(function(){
-            $('#selectAll').click(function(){
-                if($(this).is(':checked')){
-                    $("input[name=optID]").prop('checked', true);
-                }else{
-                    $("input[name=optID]").prop('checked', false);
-                }
-            });
-            $("#allNextDeal").click(function(){
-                var passenger_data = "";
-                $("input[name=optID]").each(function() {
-                    if($(this).is(':checked')){
-                        passenger_data += this.value+"|";
-                    }
-                })
-                passenger_data = passenger_data.substring(0,passenger_data.length-1);
-                if(!passenger_data) {
-                    alert("请勾选需要稍后处理的的旅客");
-                    return false;
-                }
-                show_iframe('稍后处理','/problem_order/next_deal_all?passenger_data='+passenger_data, 100,510);
-            });
-        });
-        function couponList(userId) {
-            $("#userIdModal .modal-title").html('优惠券列表');
-            $("#couponList").html('');
-            $.ajax({
-                url : '/order/get_xcode_discount.json',
-                method : 'get',
-                cache:false,
-                data : {
-                    origin_userid	: userId
-                },
-                dataType : 'json',
-                success : function(data) {
-                    var str = '';
-                    if (data) {
-                        var use = '已使用';
-                        for (i in data) {
-                            if (data[i].status == 1) {
-                                use = '未使用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="pointer" onclick="confirm_forward(\'确定要删除该优惠券吗?\',\'/order/delete_xcode_discount?ids='+data[i].id+'\')">删除</a>';
-                            }
-                            else if(data[i].status == 2){
-                                use = "已过期";
-                            }
-                            str += '<div class="form-group">';
-                            str += '<label class="col-xs-3 control-label no-padding-right">'+data[i].amount+'元优惠码：</label>';
-                            str += '<div class="col-xs-9 hr6">'+data[i]['code']+'</div>';
-                            str += '</div>';
-                            str += '<div class="form-group">';
-                            str += '<label class="col-xs-3 control-label no-padding-right">状态：</label>';
-                            str += '<div class="col-xs-9 hr6">'+data[i]['ctime']+'生成&nbsp;&nbsp;'+use+'</div>';
-                            str += '</div>';
-                        }
-                        $("#couponList").append(str);
-                        $("#userIdModal").modal('show');
-                    }
-                },
-                error	: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert('系统错误');
-                }
-            });
-        }
-    </script>
+</div>
+{include Public/common_js.html}
+</body>
+</html>
