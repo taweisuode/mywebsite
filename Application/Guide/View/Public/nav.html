@@ -14,26 +14,25 @@
     </div>
 
     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-
-
-
+        {foreach name=$directory_list}
+        {$key}{$val}
+        {/foreach}
         <ul>
-            <li class="toctree-l1"><a class="reference internal" href="../General/welcome.html">欢迎使用 ppf</a><ul class="simple">
+            <li class="toctree-l1"><a class="reference internal" href="/Guide/General/welcome">欢迎使用 {$directory_list[0]['directory_name']}ppf</a><ul class="simple">
             </ul>
             </li>
         </ul>
         <ul>
-            <li class="toctree-l1"><a class="reference internal" href="../Installation/index.html">下载与安装</a>
+            <li class="toctree-l1"><a class="reference internal" href="/Guide/Installation/index">下载与安装</a>
             </li>
         </ul>
         <ul class="current">
             <li class="toctree-l1 current"><a class="reference internal" href="index.html">ppf 概览</a><ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="getting_started.html">开始</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="/Guide/Overview/start">开始</a></li>
                 <li class="toctree-l2 current"><a class="current reference internal" href="">ppf 是什么？</a></li>
-                <li class="toctree-l2"><a class="reference internal" href="features.html">支持特性</a></li>
-                <li class="toctree-l2"><a class="reference internal" href="appflow.html">应用程序流程图</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="/Guide/Overview/folder">ppf 目录结构</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="/Guide/Overview/appflow">应用程序流程图</a></li>
                 <li class="toctree-l2"><a class="reference internal" href="mvc.html">模型 - 视图 - 控制器</a></li>
-                <li class="toctree-l2"><a class="reference internal" href="goals.html">架构目标</a></li>
             </ul>
             </li>
         </ul>
