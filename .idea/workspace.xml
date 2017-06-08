@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fa95641-8213-4568-866b-34278b04f2a8" name="默认的" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/Model/DirecotryManageModel.php" afterPath="$PROJECT_DIR$/Application/Guide/Model/DirecotryManageModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/Controller/GeneralController.php" afterPath="$PROJECT_DIR$/Application/Guide/Controller/GeneralController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php" afterPath="$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php" afterPath="$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/View/Overview/folder.html" afterPath="$PROJECT_DIR$/Application/Guide/View/Overview/folder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/View/Public/footer.html" afterPath="$PROJECT_DIR$/Application/Guide/View/Public/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/View/Public/nav.html" afterPath="$PROJECT_DIR$/Application/Guide/View/Public/nav.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ppf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +30,38 @@
       <file leaf-file-name="Compile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/Sys/Compile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.5833335">
-              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            <state vertical-scroll-proportion="7.5">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/BlogController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.50442475">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appflow.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/appflow.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.5">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DirecotryManageModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Guide/Model/DirecotryManageModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -43,8 +70,8 @@
       <file leaf-file-name="Template.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/Sys/Template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="108" column="59" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="59" />
+            <state vertical-scroll-proportion="-57.5">
+              <caret line="99" column="54" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -53,48 +80,18 @@
       <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state vertical-scroll-proportion="-13.125">
+              <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20833333">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67079645">
+            <state vertical-scroll-proportion="-16.875">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OverviewController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstallationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -103,23 +100,29 @@
       <file leaf-file-name="GeneralController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/GeneralController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="12" column="9" selection-start-line="6" selection-start-column="8" selection-end-line="12" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="folder.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/folder.html">
+      <file leaf-file-name="InstallationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
-              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#code#0;n#pre#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OverviewController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/Index/View/Index/add.html" />
         <option value="$PROJECT_DIR$/Library/Sys/Db_Table_Abstract.php" />
         <option value="$PROJECT_DIR$/Application/Config/Database.php" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -184,10 +186,11 @@
         <option value="$PROJECT_DIR$/Library/Sys/Template.php" />
         <option value="$PROJECT_DIR$/Application/Guide/View/Overview/folder.html" />
         <option value="$PROJECT_DIR$/Application/Guide/View/Public/nav.html" />
-        <option value="$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php" />
-        <option value="$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php" />
-        <option value="$PROJECT_DIR$/Application/Guide/Controller/GeneralController.php" />
         <option value="$PROJECT_DIR$/Application/Guide/View/Public/footer.html" />
+        <option value="$PROJECT_DIR$/Application/Guide/Model/DirecotryManageModel.php" />
+        <option value="$PROJECT_DIR$/Application/Guide/Controller/GeneralController.php" />
+        <option value="$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php" />
+        <option value="$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php" />
       </list>
     </option>
   </component>
@@ -590,6 +593,36 @@
               <option name="myItemId" value="Guide" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="General" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mywebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mywebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Guide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -839,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="93583" selection-start-line="1" selection-start-column="93583" selection-end-line="1" selection-end-column="93583" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/Js/translations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -857,13 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Js/doctools.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56558776">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -913,13 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1002,25 +1014,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/Model/DirecotryManageModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Test/View/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/appflow.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="47" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1099,58 +1097,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sys/Template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="108" column="59" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Cache/Guide/1d735bb636d6e2dfe15c6d1c8fa5d994.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0619469">
           <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/GeneralController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sys/Compile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.5833335">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1165,8 +1115,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67079645">
+        <state vertical-scroll-proportion="-16.875">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sys/Template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-57.5">
+          <caret line="99" column="54" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sys/Compile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.5">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Js/doctools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0950764">
+          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84719867">
+          <caret line="1" column="93583" selection-start-line="1" selection-start-column="93583" selection-end-line="1" selection-end-column="93583" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/appflow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/Model/DirecotryManageModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/GeneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="12" column="9" selection-start-line="6" selection-start-column="8" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/InstallationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/OverviewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/Controller/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50442475">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding />
         </state>
       </provider>

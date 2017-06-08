@@ -6,7 +6,20 @@ class DirecotryManageModel extends Model
     public function test() {
         $select = $this->db->select("*")->from($this->_tablename);
         $result = $select->fetchAll();
-        return $result;
+        $main_node_arr = array();
+        $children_node = array();
+        if($result) {
+            foreach($result as $key => $val) {
+                if($val['level'] == 1) {
+                    $main_node_arr[]  = $val;
+                }
+                $children_node[$val['parent_node']][] = $val;
+            }
+            foreach($main_node_arr as $key => $val) {
+                $main_node_arr[$key]['children_node'] = $children_node[$val['id']];
+            }
+        }
+        return $main_node_arr;
     }
 }
 ?>
