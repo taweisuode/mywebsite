@@ -14,27 +14,20 @@
     </div>
 
     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        {foreach name=$directory_list item=key value=val}
+        {if !empty($main_node_arr)}
+        {foreach name=$main_node_arr item=key value=val}
         <ul>
-            <li class="toctree-l1"><a class="reference internal" href="/Guide/General/welcome">{$val['directory_name']}</a><ul class="simple">
+            <li {if $val['controller'] == Dispath::$current_controller}class="toctree-l1 current" {else}class="toctree-l1" {/if}><a class="reference internal" href="/Guide/{$val['controller']}/{$val['action']}">{$val['directory_name']}</a><ul class="current">
+                {if !empty($val['children_node'])}
+                {foreach name=$val['children_node'] item=k value=v}
+                <li {if $v['action'] == Dispath::$current_action}class="toctree-l2 current" {else}class="toctree-l2"{/if} ><a class="reference internal" href="/Guide/{$v['controller']}/{$v['action']}">{$v['directory_name']}</a></li>
+                {/foreach}
+                {/if}
             </ul>
             </li>
         </ul>
         {/foreach}
-        <ul>
-            <li class="toctree-l1"><a class="reference internal" href="/Guide/Installation/index">下载与安装</a>
-            </li>
-        </ul>
-        <ul class="current">
-            <li class="toctree-l1 current"><a class="reference internal" href="index.html">ppf 概览</a><ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="/Guide/Overview/start">开始</a></li>
-                <li class="toctree-l2 current"><a class="current reference internal" href="">ppf 是什么？</a></li>
-                <li class="toctree-l2"><a class="reference internal" href="/Guide/Overview/folder">ppf 目录结构</a></li>
-                <li class="toctree-l2"><a class="reference internal" href="/Guide/Overview/appflow">应用程序流程图</a></li>
-                <li class="toctree-l2"><a class="reference internal" href="mvc.html">模型 - 视图 - 控制器</a></li>
-            </ul>
-            </li>
-        </ul>
+        {/if}
         <ul>
             <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">教程 - 内容提要</a><ul>
                 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">加载静态内容</a></li>
