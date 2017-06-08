@@ -153,11 +153,13 @@ class Template
                 ob_start();
                 $this->compile->value = $this->value;
 
-                //这里是先编译include部分的内容，然后在全部编译完毕
+                /**
+                 * @desc 这里是先编译include部分的内容，然后在全部编译完毕
+                 */
                 $include_file_arr = $this->compile->match_include_file($html_file);
                 if($include_file_arr) {
                     foreach($include_file_arr as $key => $val) {
-                        include $val;
+                        include "$val";
                         $message = ob_get_contents();
                         file_put_contents(str_replace('.php',$this->config['suffix_cache'],$val),$message);
                         ob_clean();
@@ -181,7 +183,7 @@ class Template
                 $file_line = file_put_contents($cache_file, $message);
                 ob_end_flush();
             } else {
-                include $cache_file;
+                include "$cache_file";
             }
         } else {
             include APPLICATION_PATH . '/Index/View/Notfound/index.html';

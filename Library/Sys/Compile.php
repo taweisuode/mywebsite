@@ -9,7 +9,6 @@ class Compile
     public $config = array(
         'compiledir' => 'Cache/',         //设置编译后存放的目录
         'suffix_cache' => '.htm',         //设置编译文件的后缀
-        'suffix_compile' => '.php',         //设置编译文件的后缀
     );
     public $value = array();
     public $compare_pattern = array();
