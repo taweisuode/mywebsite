@@ -37,7 +37,7 @@ class Compile
 
         //以下是上面几个模版编译后的php语言实现
 
-        $this->compare_destpattern[] = "<?php include PPF_PATH.'/'.\$this->config['compiledir'].".Dispath::$current_module.".'/'.md5('".Dispath::$current_controller.'_'.Dispath::$current_action.'_'."\\1').\$this->config['suffix_cache']; ?>";
+        $this->compare_destpattern[] = "<?php include PPF_PATH.'/'.\$this->config['compiledir'].".Dispath::$current_module.".'/'.md5('".Dispath::$current_controller.'_'.Dispath::$current_action.'_'."\\1').'.php'; ?>";
 
         $this->compare_destpattern[] = "<?php echo $\\1;?>";
 

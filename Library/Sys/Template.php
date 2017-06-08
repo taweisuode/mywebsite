@@ -150,23 +150,15 @@ class Template
              *   最后ob_start()方法需要  include $compile_file;
              */
             if ($this->cache_strategy($php_file, $model_file_arr, $html_file, $compile_file)) {
-                ob_start();
                 $this->compile->value = $this->value;
 
                 /**
                  * @desc 这里是先编译include部分的内容，然后在全部编译完毕
                  */
-                $include_file_arr = $this->compile->match_include_file($html_file);
-                if($include_file_arr) {
-                    foreach($include_file_arr as $key => $val) {
-                        include "$val";
-                        $message = ob_get_contents();
-                        file_put_contents(str_replace('.php',$this->config['suffix_cache'],$val),$message);
-                        ob_clean();
-                    }
-                }
+                ob_start();
+                $this->compile->match_include_file($html_file);
                 $this->compile->compile($html_file, $compile_file);
-                include $compile_file;
+                include "$compile_file";
                 /**
                  *   这块是得到输出缓冲区的内容并将其写入缓存文件$cache_file中，同时将编译文件跟缓存文件进行赋予755权限
                  *   这时可以去看看Cache下面会有2个文件 一个是php文件 一个是htm文件 htm文件就是翻译成html语言的缓存文件

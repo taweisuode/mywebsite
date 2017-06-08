@@ -35,7 +35,12 @@
             <div class="rst-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <ul class="wy-breadcrumbs">
-                        <li><a href="/" target="_blank">ppf 中{$directory_list[0]['directory_name']}国</a> &raquo; </li>
+                        <li><a href="/" target="_blank">ppf 中国</a> &raquo; </li>
+                        {foreach name=$directory_list item=key value=val}
+                        <ul>
+                            {$val['directory_name']}
+                        </ul>
+                        {/foreach}
                         <li><a href="../index.html">文档首页</a> &raquo; </li>
 
                         <li>ppf 目录结构</li>

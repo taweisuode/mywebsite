@@ -14,11 +14,13 @@
     </div>
 
     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        {foreach name=$directory_list item=key value=val}
         <ul>
-            <li class="toctree-l1"><a class="reference internal" href="/Guide/General/welcome">欢迎{$directory_list[0]['directory_name']}使用 ppf</a><ul class="simple">
+            <li class="toctree-l1"><a class="reference internal" href="/Guide/General/welcome">{$val['directory_name']}</a><ul class="simple">
             </ul>
             </li>
         </ul>
+        {/foreach}
         <ul>
             <li class="toctree-l1"><a class="reference internal" href="/Guide/Installation/index">下载与安装</a>
             </li>
