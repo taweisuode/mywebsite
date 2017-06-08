@@ -13,7 +13,8 @@ class Template
 {
     protected $compile;
     public $value = array();
-    public $config = array('compiledir' => 'Cache/',         //设置编译后存放的目录
+    public $config = array(
+        'compiledir' => 'Cache/',         //设置编译后存放的目录
         'need_compile' => true,           //是否需要重新编译 true 需要重新编译 false 直接加载缓存文件
         'suffix_cache' => '.htm',         //设置编译文件的后缀
         'cache_time' => 2000              //多长时间自动更新，单位秒  
@@ -151,6 +152,17 @@ class Template
             if ($this->cache_strategy($php_file, $model_file_arr, $html_file, $compile_file)) {
                 ob_start();
                 $this->compile->value = $this->value;
+
+                //这里是先编译include部分的内容，然后在全部编译完毕
+                $include_file_arr = $this->compile->match_include_file($html_file);
+                if($include_file_arr) {
+                    foreach($include_file_arr as $key => $val) {
+                        include $val;
+                        $message = ob_get_contents();
+                        file_put_contents(str_replace('.php',$this->config['suffix_cache'],$val),$message);
+                        ob_clean();
+                    }
+                }
                 $this->compile->compile($html_file, $compile_file);
                 include $compile_file;
                 /**

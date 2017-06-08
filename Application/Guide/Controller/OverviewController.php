@@ -17,6 +17,7 @@
             $this->view->show();
         }
         public function folderAction() {
+            $this->view->assign('test',"111");
             $this->view->show();
         }
         public function appflowAction() {
