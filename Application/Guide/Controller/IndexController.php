@@ -3,7 +3,7 @@
 /**
  * @desc ppf框架用户手册
  */
-    class InstallationController extends Controller {
+    class IndexController extends Controller {
         public function __CONSTRUCT() {
             parent::__CONSTRUCT();
             $directoryModel = new DirecotryManageModel();
@@ -15,5 +15,4 @@
             $this->view->show();
         }
     }
-
 ?>

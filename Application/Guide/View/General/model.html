@@ -14,7 +14,7 @@
 
         <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
             <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-            <a href="../index.html">CodeIgniter</a>
+            <a href="../index.html">ppf</a>
         </nav>
 
 
@@ -25,9 +25,9 @@
                     <ul class="wy-breadcrumbs">
                         <li><a href="/" target="_blank">ppf 中国</a> &raquo; </li>
                         <li><a href="/Guide/Index/index">文档首页</a> &raquo; </li>
-                        <li><a href="/Guide/Overview/index">ppf 概览</a> &raquo; </li>
+                        <li><a href="/Guide/General/index">常规主题</a> &raquo; </li>
 
-                        <li>ppf 将从这里开始</li>
+                        <li>模型</li>
                         <li class="wy-breadcrumbs-aside">
 
                         </li>
@@ -42,12 +42,70 @@
                 <div role="main" class="document">
 
                     <div class="section" id="codeigniter">
-                        <h1>ppf 将从这里开始<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
-                        <p> 任何应用程序的学习都需要花费一定的精力。我们尽自己最大的努力使大家在学习中少走弯路，并且充满乐趣。</p>
-                        <p>第一步就是 下载并安装 <a href="/Guide/Installation/index"> ppf</a> ，然后阅读目录中的内容。</p>
-                        <p>接下来，按顺序阅读 常规主题 里面的每一篇内容，那里每一篇的内容都是承接前一篇的， 并且提供了样例代码，你可以尝试一下。</p>
-                        <p>一旦你掌握了这些基础概念，你就可以去看看 类库参考 和 辅助函数参考， 去学习如何使用 ppf 原生的类库和辅助函数文件。</p>
-                        <p>如果遇到了问题可以到我们的 开发者社区 寻找解答，另外， 也可以去我们的 维基页面，里面有其他用户分享的例子代码。</p>
+                        <h1>模型<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
+                        <h2>什么是模型？</h2>
+                        <p>模型是专门用来和数据库打交道的 PHP 类,ppf集成封装了大部分的mysql curd语句，我们就可以很方便的进行数据库操作</p>
+                        <p>可以查看以下实例，查看如何进行model文件的编辑</p>
+                        <pre>
+                            <code>
+&lt?php
+error_reporting(E_ALL ^ E_NOTICE);
+class DirecotryManageModel extends Model
+{
+    protected $_tablename = 'directory_manage';
+    public function directoryData() {
+        $select = $this->db->select("*")->from($this->_tablename);
+        $result = $select->fetchAll();
+        $main_node_arr = array();
+        $children_node = array();
+        if($result) {
+            foreach($result as $key => $val) {
+                if($val['level'] == 1) {
+                    $main_node_arr[]  = $val;
+                }
+                $children_node[$val['parent_node']][] = $val;
+            }
+            foreach($main_node_arr as $key => $val) {
+                $main_node_arr[$key]['children_node'] = $children_node[$val['id']];
+            }
+        }
+        return $main_node_arr;
+    }
+    public function generalDir() {
+        $where = array(
+            'controller' => 'General'
+        );
+        $select = $this->db->select("*")->from($this->_tablename);
+        $select->where($where);
+        $result = $select->fetchAll();
+        return $result;
+    }
+}
+?&gt
+                            </code>
+                        </pre>
+                        <ul class="simple">
+                            <li>ppf中提供了简单的基础的链式操作</li>
+                            <li>ppf中还支持很多基础的mysql操作，具体可以查看<a href="/Guide/Database/index">数据库参考的内容</a></li>
+                            <li>controller为方法名</li>
+                        </ul>
+                        <h2>如何在控制器中调用模型中生成的数据？</h2>
+                        <pre>
+                            <code>
+&lt?php
+
+    public function indexAction() {
+        $directoryModel = new DirecotryManageModel();
+        $generalDir = $directoryModel->generalDir();
+        $this->view->assign('generalDir',$generalDir);
+        $this->view->show();
+    }
+?&gt
+                            </code>
+                        </pre>
+                        <p>ppf实现了<span style="color: red;">自动加载类</span>，所以不需要包含类文件，直接new一个model类就可以调起</p>
+                        <pre><code> $directoryModel = new DirecotryManageModel();</code></pre>
+                        <p>这里需要注意大小写，以及确保对应到相应的Model文件夹下的model文件</p>
                     </div>
 
 
@@ -61,4 +119,7 @@
 </div>
 {include Public/common_js.html}
 </body>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
 </html>

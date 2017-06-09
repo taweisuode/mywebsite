@@ -14,7 +14,7 @@
 
         <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
             <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-            <a href="../index.html">CodeIgniter</a>
+            <a href="../index.html">ppf</a>
         </nav>
 
 
@@ -25,9 +25,9 @@
                     <ul class="wy-breadcrumbs">
                         <li><a href="/" target="_blank">ppf 中国</a> &raquo; </li>
                         <li><a href="/Guide/Index/index">文档首页</a> &raquo; </li>
-                        <li><a href="/Guide/Overview/index">ppf 概览</a> &raquo; </li>
+                        <li><a href="/Guide/General/index">常规主题</a> &raquo; </li>
 
-                        <li>ppf 将从这里开始</li>
+                        <li>控制器</li>
                         <li class="wy-breadcrumbs-aside">
 
                         </li>
@@ -42,12 +42,64 @@
                 <div role="main" class="document">
 
                     <div class="section" id="codeigniter">
-                        <h1>ppf 将从这里开始<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
-                        <p> 任何应用程序的学习都需要花费一定的精力。我们尽自己最大的努力使大家在学习中少走弯路，并且充满乐趣。</p>
-                        <p>第一步就是 下载并安装 <a href="/Guide/Installation/index"> ppf</a> ，然后阅读目录中的内容。</p>
-                        <p>接下来，按顺序阅读 常规主题 里面的每一篇内容，那里每一篇的内容都是承接前一篇的， 并且提供了样例代码，你可以尝试一下。</p>
-                        <p>一旦你掌握了这些基础概念，你就可以去看看 类库参考 和 辅助函数参考， 去学习如何使用 ppf 原生的类库和辅助函数文件。</p>
-                        <p>如果遇到了问题可以到我们的 开发者社区 寻找解答，另外， 也可以去我们的 维基页面，里面有其他用户分享的例子代码。</p>
+                        <h1>控制器<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
+                        <h2>什么是控制器？</h2>
+                        <p>简而言之，一个控制器就是一个类文件，是以一种能够和 URI 关联在一起的方式来命名的。<br>
+                        查看下面的URI</p>
+                        <pre>
+                            <code>
+    http://jingpeng.blog.com/Guide/General/controller
+                            </code>
+                        </pre>
+                        <ul class="simple">
+                            <li>Guide为模块名</li>
+                            <li>General为控制器名</li>
+                            <li>controller为方法名</li>
+                        </ul>
+                        <h2>如何创建控制器？</h2>
+                        <pre>
+                            <code>
+&lt?php
+
+/**
+ * @desc ppf框架用户手册
+ */
+    class GeneralController extends Controller {
+        public function controllerAction() {
+            $this->view->show();
+        }
+    }
+?&gt
+                            </code>
+                        </pre>
+                        <p>根据以上实例，我们能够很方便的创建controller类</p>
+                        <pre><code>$this->view->show();</code></pre>
+                        <p>是默认指向  View/控制器名下面的<a href="/Guide/General/view">视图文件</a></p>
+                        <h2>如何在控制器类中使用构造函数？</h2>
+                        <p>可以查看该用户手册的<a href="https://github.com/taweisuode/mywebsite">开源项目地址</a>并下载查看</p>
+                        <p>例如本控制器中的构造函数有如下的写法</p>
+                        <pre><code>
+ &lt?php
+
+/**
+ * @desc ppf框架用户手册
+ */
+    class GeneralController extends Controller {
+        public function __CONSTRUCT() {
+            parent::__CONSTRUCT();
+            $directoryModel = new DirecotryManageModel();
+            $main_node_arr = $directoryModel->directoryData();
+            $this->view->assign('main_node_arr',$main_node_arr);
+        }
+
+    }
+?&gt
+
+                        </code></pre>
+                        <div class="admonition note">
+                            <p class="first admonition-title">提示</p>
+                            <p class="last">可以看出如果需要调用子类的构造方法，必须先调用父类的构造函数</p>
+                        </div>
                     </div>
 
 
@@ -61,4 +113,7 @@
 </div>
 {include Public/common_js.html}
 </body>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
 </html>

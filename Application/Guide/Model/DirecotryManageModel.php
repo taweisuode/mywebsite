@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 class DirecotryManageModel extends Model
 {
     protected $_tablename = 'directory_manage';
-    public function test() {
+    public function directoryData() {
         $select = $this->db->select("*")->from($this->_tablename);
         $result = $select->fetchAll();
         $main_node_arr = array();
@@ -20,6 +20,15 @@ class DirecotryManageModel extends Model
             }
         }
         return $main_node_arr;
+    }
+    public function generalDir($dirname= "") {
+        $where = array(
+            'controller' => $dirname
+        );
+        $select = $this->db->select("*")->from($this->_tablename);
+        $select->where($where);
+        $result = $select->fetchAll();
+        return $result;
     }
 }
 ?>

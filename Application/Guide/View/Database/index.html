@@ -24,10 +24,9 @@
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <ul class="wy-breadcrumbs">
                         <li><a href="/" target="_blank">ppf 中国</a> &raquo; </li>
-                        <li><a href="/Guide/Index/index">文档首页</a> &raquo; </li>
-                        <li><a href="/Guide/Overview/index">ppf 概览</a> &raquo; </li>
+                        <li><a href="../index.html">文档首页</a> &raquo; </li>
 
-                        <li>ppf 将从这里开始</li>
+                        <li>常规主题</li>
                         <li class="wy-breadcrumbs-aside">
 
                         </li>
@@ -42,12 +41,17 @@
                 <div role="main" class="document">
 
                     <div class="section" id="codeigniter">
-                        <h1>ppf 将从这里开始<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
-                        <p> 任何应用程序的学习都需要花费一定的精力。我们尽自己最大的努力使大家在学习中少走弯路，并且充满乐趣。</p>
-                        <p>第一步就是 下载并安装 <a href="/Guide/Installation/index"> ppf</a> ，然后阅读目录中的内容。</p>
-                        <p>接下来，按顺序阅读 常规主题 里面的每一篇内容，那里每一篇的内容都是承接前一篇的， 并且提供了样例代码，你可以尝试一下。</p>
-                        <p>一旦你掌握了这些基础概念，你就可以去看看 类库参考 和 辅助函数参考， 去学习如何使用 ppf 原生的类库和辅助函数文件。</p>
-                        <p>如果遇到了问题可以到我们的 开发者社区 寻找解答，另外， 也可以去我们的 维基页面，里面有其他用户分享的例子代码。</p>
+                        <h1>常规主题<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
+                        <div class="toctree-wrapper compound">
+                            <ul>
+                                {foreach name=$generalDir item=key value=val}
+                                <li class="toctree-l1"><a class="reference internal" href="/Guide/{$val['controller']}/{$val['action']}">{$val['directory_name']}</a>
+                                    <ul class="simple">
+                                </ul>
+                                </li>
+                                {/foreach}
+                            </ul>
+                        </div>
                     </div>
 
 

@@ -7,7 +7,7 @@
         public function __CONSTRUCT() {
             parent::__CONSTRUCT();
             $directoryModel = new DirecotryManageModel();
-            $main_node_arr = $directoryModel->test();
+            $main_node_arr = $directoryModel->directoryData();
 
             $this->view->assign('main_node_arr',$main_node_arr);
         }
@@ -15,6 +15,12 @@
             $this->view->show();
         }
         public function indexAction() {
+            $directoryModel = new DirecotryManageModel();
+            $generalDir = $directoryModel->generalDir("Overview");
+            $this->view->assign('generalDir',$generalDir);
+            $this->view->show();
+        }
+        public function meaningAction() {
             $this->view->show();
         }
         public function folderAction() {

@@ -3,7 +3,7 @@
 /**
  * @desc ppf框架用户手册
  */
-    class GeneralController extends Controller {
+    class DatabaseController extends Controller {
         public function __CONSTRUCT() {
             parent::__CONSTRUCT();
             $directoryModel = new DirecotryManageModel();
@@ -12,29 +12,17 @@
         }
         public function indexAction() {
             $directoryModel = new DirecotryManageModel();
-            $generalDir = $directoryModel->generalDir("General");
+            $generalDir = $directoryModel->generalDir('Database');
             $this->view->assign('generalDir',$generalDir);
             $this->view->show();
         }
-        public function routeAction() {
+        public function configAction() {
             $this->view->show();
         }
-        public function controllerAction() {
+        public function curdAction() {
             $this->view->show();
         }
-        public function modelAction() {
-            $this->view->show();
-        }
-        public function viewAction() {
-            $this->view->show();
-        }
-        public function exceptionAction() {
-            $this->view->show();
-        }
-        public function assignAction() {
-            $this->view->show();
-        }
-        public function commonAction() {
+        public function transactionAction() {
             $this->view->show();
         }
     }

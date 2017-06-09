@@ -34,6 +34,8 @@ class Compile
         $this->compare_pattern[] = '#\{php (.*?)\}#';
         $this->compare_pattern[] = '#\{/php\}#';
 
+        $this->compare_pattern[] = '#\{compile_include (.*?)\}#';
+
 
         //以下是上面几个模版编译后的php语言实现
 
@@ -51,6 +53,8 @@ class Compile
 
         $this->compare_destpattern[] = "<?php \\1 ";
         $this->compare_destpattern[] = "?>";
+
+        $this->compare_destpattern[] = '<?php include "'.APPLICATION_PATH.'/'.Dispath::$current_module.'/View/'.'\\1";?>';
 
         $this->compare_include_pattern = '#\{include (.*?)\}#';
     }

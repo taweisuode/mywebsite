@@ -24,7 +24,7 @@
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <ul class="wy-breadcrumbs">
                         <li><a href="/" target="_blank">ppf 中国</a> &raquo; </li>
-                        <li><a href="../index.html">文档首页</a> &raquo; </li>
+                        <li><a href="/Guide/Index/index">文档首页</a> &raquo; </li>
 
                         <li>ppf 概览</li>
                         <li class="wy-breadcrumbs-aside">
@@ -42,16 +42,16 @@
 
                     <div class="section" id="codeigniter">
                         <h1>ppf 概览<a class="headerlink" href="#codeigniter" title="永久链接至标题">¶</a></h1>
-                        <h2>ppf 使用M-V-C 架构</h2>
-                        <p>ppf 使用了模型-视图-控制器 架构，它能很好的将逻辑层和表示层分离。 特别是对于那些使用了模板文件的项目来说更好，它能减少模板文件中的代码量。 我们在介绍 MVC 架构的页面有更详细的介绍。</p>
-                        <h2>ppf 自主研发模板引擎</h2>
-                        <p> ppf 开发出了类似smarty的模版引擎功能，虽然实现的功能比较少，但是你可以通过学习ppf的模版引擎来掌握这些知识，当然我也希望你能加入进来，完善更多的模版引擎</p>
-                        <h2>ppf 拥有全面的文档</h2>
-                        <p>目前也只有<a href="https://github.com/taweisuode">我</a>来进行ppf的文档维护工作 </p>
-                        <p>第一步就是 下载并安装 <a href="/Guide/Installation/index"> ppf</a> ，然后阅读目录中的内容。</p>
-                        <p>接下来，按顺序阅读 常规主题 里面的每一篇内容，那里每一篇的内容都是承接前一篇的， 并且提供了样例代码，你可以尝试一下。</p>
-                        <p>一旦你掌握了这些基础概念，你就可以去看看 类库参考 和 辅助函数参考， 去学习如何使用 ppf 原生的类库和辅助函数文件。</p>
-                        <p>如果遇到了问题可以到我们的 开发者社区 寻找解答，另外， 也可以去我们的 维基页面，里面有其他用户分享的例子代码。</p>
+                        <div class="toctree-wrapper compound">
+                            <ul>
+                                {foreach name=$generalDir item=key value=val}
+                                <li class="toctree-l1"><a class="reference internal" href="/Guide/{$val['controller']}/{$val['action']}">{$val['directory_name']}</a>
+                                    <ul class="simple">
+                                </ul>
+                                </li>
+                                {/foreach}
+                            </ul>
+                        </div>
                     </div>
 
 
