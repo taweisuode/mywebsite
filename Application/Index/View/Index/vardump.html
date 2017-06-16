@@ -43,7 +43,7 @@
     <div class="md-content">
         <h3>使用展示</h3>
         <div>
-            <img src="/Public/Image/show.gif" alt="gif" width="550px" height="400px"/>
+            <img class="lazy" data-original="/Public/Image/show.gif"  alt="gif" width="550px" height="400px"/>
             <button class="md-close">关闭</button>
         </div>
     </div>
@@ -89,6 +89,7 @@
 <link href="/Public/Css/var_dump/textarea.css" rel="stylesheet">
 <script src="/Public/Js/jquery.min.js"></script>
 <script src="/Public/Js/layer.js"></script>
+<script src="/Public/Js/jquery.lazyload.js"></script>
 <script type="text/javascript">
     $('#var_dump_src').keyup(function(){
         var content = $.trim($(this).val());
@@ -110,17 +111,6 @@
         }
 
     });
-    $('.xml').click(function(){
-        if (xml_flag) {
-            $('#json-src').keyup();
-        }else{
-            var result = $.json2xml(current_json);
-            $('#json-target').html('<textarea style="width:100%;height:100%;border:0;resize:none;">'+result+'</textarea>');
-            xml_flag = true;
-            $(this).attr('style','color:#15b374;');
-        }
-
-    });
     $('#how_to_use').click(function(){
         if($("#modal-4").hasClass("md-show")) {
             $("#modal-4").removeClass("md-show")
@@ -132,16 +122,22 @@
     $(".md-close").click(function() {
         $("#modal-4").removeClass("md-show");
     });
-    $('.clear').click(function(){
-        $('#json-src').val('');
-        $('#json-target').html('');
+    $(function(){
+        $("img.lazy").lazyload({
+            effect : "fadeIn"
+        });
+    })
+    $(function() {
+        $("img.lazy").lazyload({
+            event : "sporty"
+        });
     });
-    $('.save').click(function(){
-        var content = JSON.stringify(current_json);
-        $('#txt-content').val(content);
-        $("#form-save").submit();
+
+    $(window).bind("load", function() {
+        var timeout = setTimeout(function() {
+            $("img.lazy").trigger("sporty")
+        }, 5000);
     });
-    $('#json-src').keyup();
 </script>
 
 
