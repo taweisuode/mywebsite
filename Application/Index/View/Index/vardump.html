@@ -18,8 +18,8 @@
     <link href="http://json.cn/css/base.css" rel="stylesheet">
     <link href="/Public/Css/var_dump/default.css" rel="stylesheet">
     <link href="/Public/Css/var_dump/component.css" rel="stylesheet">
-    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <link href="/Public/Css/var_dump/textarea.css" rel="stylesheet">
+    <script src="/Public/Js/jquery.min.js"></script>
 </head>
 <body style="over-flow:hidden;">
 <header class="header">
@@ -43,7 +43,7 @@
     <div class="md-content">
         <h3>使用展示</h3>
         <div>
-            <img class="lazy" data-original="/Public/Image/show.gif"  alt="gif" width="550px" height="400px"/>
+            <img id="lazy-img" data="/Public/Image/show.gif" src="/Public/Image/zhanwei.jpg" width="550px" height="400px"/>
             <button class="md-close">关闭</button>
         </div>
     </div>
@@ -86,10 +86,14 @@
     </div>
     <br style="clear:both;" />
 </main>
-<link href="/Public/Css/var_dump/textarea.css" rel="stylesheet">
-<script src="/Public/Js/jquery.min.js"></script>
 <script src="/Public/Js/layer.js"></script>
-<script src="/Public/Js/jquery.lazyload.js"></script>
+<script>
+    $(window).bind("load", function() {
+        var timeout = setTimeout(function() {
+            $("#lazy-img").attr("src",$("#lazy-img").attr("data"));
+        }, 2000);
+    });
+</script>
 <script type="text/javascript">
     $('#var_dump_src').keyup(function(){
         var content = $.trim($(this).val());
@@ -121,22 +125,6 @@
     });
     $(".md-close").click(function() {
         $("#modal-4").removeClass("md-show");
-    });
-    $(function(){
-        $("img.lazy").lazyload({
-            effect : "fadeIn"
-        });
-    })
-    $(function() {
-        $("img.lazy").lazyload({
-            event : "sporty"
-        });
-    });
-
-    $(window).bind("load", function() {
-        var timeout = setTimeout(function() {
-            $("img.lazy").trigger("sporty")
-        }, 5000);
     });
 </script>
 
