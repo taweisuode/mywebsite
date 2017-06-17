@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>print_r,var_dump数据解析</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta http-equiv="Cache-Control" content="max-age=7200" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all" />
+    <meta name="author" content="json.cn" />
+
+    <link rel="shortcut icon" href="/Public/Image/icon.gif" type="image/x-icon">
+    <meta name="keywords" content="print_r,var_dump,var_dump数据解析,Postman"/>
+    <meta name="description" content="将print_r,var_dump数据进行解析，让Postman可以轻松导入"/>
+
+    <link href="/Public/Css/var_dump/bootstrap.min.css" rel="stylesheet">
+    <link href="http://json.cn/css/base.css" rel="stylesheet">
+    <link href="/Public/Css/var_dump/default.css" rel="stylesheet">
+    <link href="/Public/Css/var_dump/component.css" rel="stylesheet">
+    <link href="/Public/Css/var_dump/textarea.css" rel="stylesheet">
+    <script src="/Public/Js/jquery.min.js"></script>
+</head>
+<body style="over-flow:hidden;">
+<header class="header">
+    <div class="row-fluid" >
+        <div class="col-md-5" style="position:relative;">
+            <div  class="navi" style="margin-top:10px;font-size: 15px">
+                将<span class="green">print_r</span>,<span class="green">var_dump</span> 数据进行解析，让<span class="green">Postman</span>可以轻松导入
+            </div>
+        </div>
+        <nav class="col-md-7" style="padding:10px 0; "  align="left">
+            <div  class="navi" >
+                <a href="javascript:void(0)"  id="how_to_use" style="font-size: 15px;color: #17B272" data-placement="bottom">如何使用</a>
+
+            </div>
+        </nav>
+        <br style="clear:both;" />
+    </div>
+</header>
+
+<div class="md-modal md-effect-4" id="modal-4">
+    <div class="md-content">
+        <h3>使用展示</h3>
+        <div>
+            <img id="lazy-img" data="/Public/Image/show.gif" src="/Public/Image/zhanwei.jpg" width="100%" height="400px"/>
+            <button class="md-close">关闭</button>
+        </div>
+    </div>
+</div>
+<main class="row-fluid">
+    <div class="col-md-5" style="padding:0px;">
+        <textarea id="var_dump_src" placeholder="在此输入print_r或var_dump数据..."   class="form-control"  style="height:530px;padding:0 10px 10px 10px;border:0;border-right:solid 1px #E5EBEE;border-bottom:solid 1px #eee;border-radius:0;resize: none; outline:none;font-size:10px;">array(15) {
+  ["id"]=>
+  int(123456)
+  ["money"]=>
+  float(10.02)
+  ["is_success"]=>
+  bool(false)
+  ["flight_type"]=>
+  string(1) "4"
+  ["depart_date"]=>
+  string(10) "2017-01-01"
+}</textarea>
+    </div>
+    <div class="col-md-7" style="padding:0;">
+        <div id="right-box"  style="height:530px;border-bottom:solid 1px #E5EBEE;border-radius:0;resize: none;overflow-y:scroll; outline:none;position:relative;font-size:12px;font-family:Menlo,Monaco,Consolas,'微软雅黑', monospace, Arial,sans-serif,'黑体';">
+            <div id="line-num" style="background-color:#fafafa;padding:0px 8px;float:left;border-right:dashed 1px #E5EBEE;display:none;z-index:-1;color:#999;position:absolute;text-align:center;over-flow:hidden;">
+                <div>0</div>
+            </div>
+            <div class="ro" id="var_dump_target" style="padding:0px 25px;margin-top: 20px;">
+                <code>
+                    id:123456
+                    <br>
+                    money:10.02
+                    <br>
+                    is_success:false
+                    <br>
+                    flight_type:4
+                    <br>
+                    depart_date:2017-01-01
+                </code>
+            </div>
+        </div>
+        <form id="form-save" method="POST"><input type="hidden" value="" id="txt-content" name="content"></form>
+    </div>
+    <br style="clear:both;" />
+</main>
+<script src="/Public/Js/layer.js"></script>
+<script>
+    $(window).bind("load", function() {
+        var timeout = setTimeout(function() {
+            $("#lazy-img").attr("src",$("#lazy-img").attr("data"));
+        }, 2000);
+    });
+</script>
+<script type="text/javascript">
+    $('#var_dump_src').keyup(function(){
+        var content = $.trim($(this).val());
+        var result = '';
+        if (content!='') {
+
+            $.ajax({
+            type: "POST",
+            data: "str="+content,
+            url: '/Index/Index/do_var_dump',
+            async:false,
+            success: function(data) {
+                var str = data.trim().replace(/\n/g,"<br />").trim();
+                $("#var_dump_target").html("<code>"+str+"</code>");
+            }
+            });
+        }else{
+            $('#var_dump_target').html('');
+        }
+
+    });
+    $('#how_to_use').click(function(){
+        if($("#modal-4").hasClass("md-show")) {
+            $("#modal-4").removeClass("md-show")
+        }else {
+            $("#modal-4").addClass("md-show")
+        }
+
+    });
+    $(".md-close").click(function() {
+        $("#modal-4").removeClass("md-show");
+    });
+</script>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1262314234'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1262314234%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>
