@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>{$result}</title>
+</head>
+<body>
+{$movie_list['movie_name']}
+{if $max == 4}
+aaa
+{elseif $max == 6}
+asaas
+{else}
+ccc
+{/if}
+<table>
+{foreach name=$fruit}
+<tr>
+    <td>{$key}</td><td>{$val}</td>
+</tr>
+{/foreach}
+{foreach name=$test}
+<tr>
+    <td>{$key}</td><td>{$val['yes']}</td>
+</tr>
+{/foreach}
+</table>
+</body>
+</html>
