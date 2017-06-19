@@ -1,0 +1,111 @@
+{include Public/header.html}
+<div class="container-fluid" id="main-container">
+    <a href="#" id="menu-toggler"><span></span></a><!-- menu toggler -->
+    {include Public/nav.html}
+
+
+    <div id="main-content" class="clearfix">
+
+
+        <div id="breadcrumbs">
+
+            <ul class="breadcrumb">
+
+                <li><i class="icon-home"></i> <a href="__APP__/Index/index">Home</a><span class="divider"><i
+                        class="icon-angle-right"></i></span></li>
+
+                <li class="active">PHP入门与精通</li>
+            </ul>
+            <!--.breadcrumb-->
+
+
+            <div id="nav-search">
+                <form class="form-search">
+                    <span class="input-icon">
+                        <input autocomplete="off" id="nav-search-input" type="text"
+                               class="input-small search-query" placeholder="Search ..."/>
+                        <i id="nav-search-icon" class="icon-search"></i>
+                    </span>
+                </form>
+
+            </div>
+            <!--#nav-search-->
+
+        </div>
+        <!--#breadcrumbs-->
+        <!-- PAGE CONTENT BEGINS HERE -->
+        <div class="page-content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form id="myform" name="myform" class="form-horizontal border" method="post" action="/Admin/Study/add">
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>文章标题：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="title" name="title" ng-model="product.tag" class="col-xs-6"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>文章类型：</label>
+                            <div class="col-xs-10">
+                                <input type="radio"  name="article_type" value="1" checked="checked"/> 原创
+                                <input type="radio"  name="article_type" value="2"/> 转载
+                            </div>
+                        </div>
+                        <div id="link_div" class="form-group hidden">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>转载链接：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="link" name="article_link"  class="col-xs-6"/>
+                            </div>
+                        </div>
+                        <div id="author_div" class="form-group hidden">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>转载作者：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="author" name="author"  class="col-xs-6"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right" ><span class="red">*</span>文章描述：</label>
+                            <div class="col-xs-10">
+                                <textarea id="TextArea1" name="content_description" cols="20" rows="2" class="ckeditor" ></textarea></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right" ><span class="red">*</span>文章内容：</label>
+                            <div class="col-xs-10">
+                                <textarea id="TextArea2" name="content" cols="20" rows="2" class="ckeditor" ></textarea></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-10 col-xs-offset-2">
+                                <button id="save" class="btn btn-sm btn-info">
+                                    <i class="ace-icon fa fa-check"></i>&nbsp;保　存&nbsp;
+                                </button>　　
+                                <button class="btn btn-sm btn-default" onclick="window.history.back();">
+                                    <i class="ace-icon fa fa-long-arrow-left"></i>&nbsp;返　回&nbsp;
+                                </button>
+                            </div>
+                        </div>
+                        <input type="hidden" id="origin_priority_type" value="{$getProduct['priority_type']}" />  <!--主要是用来判断是否更改了优先显示-->
+                    </form>
+                </div>
+            </div>
+        </div><!--/.page-content-->
+    </div>
+</div>
+        <!--/row-->
+        {include Public/footer.html}
+        </body>
+<script type="text/javascript" src="/Public/Library/ckeditor/ckeditor.js"></script>
+<script>
+    $('input[name=article_type]').change(function() {
+        if($(this).val() == 2) {
+            $("#link_div").removeClass("hidden");
+            $("#author_div").removeClass("hidden");
+        }else {
+            $("#link_div").addClass("hidden");
+            $("#author_div").addClass("hidden");
+        }
+    })
+    $("#save").click(function() {
+        $("form").submit;
+    })
+</script>
+        </html>

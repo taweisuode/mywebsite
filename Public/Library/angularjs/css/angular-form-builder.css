@@ -1,0 +1,94 @@
+.fb-component{padding:10px;cursor:move}
+.fb-component input{cursor:move}
+.fb-component label{cursor:move}
+.fb-component select{cursor:move}
+.fb-component textarea{cursor:move}
+.fb-form-object-editable.fb-draggable{cursor:move}
+.fb-form-object-editable.fb-draggable input{cursor:move}
+.fb-form-object-editable.fb-draggable label{cursor:pointer}
+.fb-form-object-editable.fb-draggable select{cursor:move}
+.fb-form-object-editable.fb-draggable textarea{cursor:move}
+.fb-form-object-editable.empty{cursor:default;margin:6px;height:80px;border:dashed 1px #aaa;background-color:#eee}
+.fb-form-object-editable.inline{display:inline-block;}
+.fb-form-object-editable.empty-width{width:2px;}
+.fb-form-object-editable.empty-height{height:2px;}
+.fb-draggable.dragging{background-color:#ffffff;position:absolute;z-index:800;-webkit-box-shadow:#666 0 0 20px;-moz-box-shadow:#666 0 0 20px;box-shadow:#666 0 0 20px;padding: 0}
+.fb-draggable.dragging .udc_node{border: none;}
+/*.fb-draggable.dragging .udc_node .s_label{margin-top: 0}*/
+.fb-required:before{color:#b94a48;content:' *'}
+.fb-builder{min-height:250px}
+.fb-components{min-height:250px;}
+.modal label{font-weight:normal}
+.attr-modal {position:absolute; bottom:-1px; left:99%; width:400px; background-color:#ffffff; padding:10px; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, .2); border-left:none; border-radius: 0px 6px 6px 0px; -webkit-box-shadow: 8px 5px 10px rgba(0, 0, 0, .2); box-shadow: 8px 5px 10px rgba(0, 0, 0, .2);}
+.attr-button {position:absolute; top:50%; right:0px; font-size:24px; padding:0px;}
+.margintop {margin-top:10px;}
+.event-container {clear:both;}
+.event-container textarea {height:100px; margin-bottom:10px;}
+.fb-form-object select.full-width{width:100%}
+.fb-form-object select.auto-width{width:auto}
+.form-group .no-padding{padding-left:0px;padding-right:0px;}
+.form-group .wrap-word{overflow-wrap: break-word;}
+.form-group .is-container{padding-top:2px;margin-bottom:0px;}
+.form-group .is-container .fb-form-object{padding-left:5px;padding-right:5px;}
+.input-group.fb-inline-table{display:inline-table;vertical-align:super;margin-right:10px;}
+.scrollable-menu{height:auto;max-height:200px;overflow-x:hidden;}
+.checkbox.fb-inline,.radio.fb-inline{display:inline-block!important;margin-right:10px;}
+.udc_item{float:left;/*height:74px;margin-top:14px;*/}
+.udc_node{height:72px;broder-redius:3px;border:1px solid #cccccc;border-shadow:1px 1px 1px #cccccc;text-align:center;margin:0 auto;cursor:move}
+.udc_item em{background:url(/images/form-builder.png) no-repeat;width:28px;height:32px;display:inline-block;margin-top:9px;}
+.udc_item span {
+display: block;
+text-align: center;
+height: 34px;
+line-height: 34px;
+font-size: 10px;
+margin-top: -5px;
+    white-space: nowrap;
+    /*overflow: hidden;*/
+    /*text-overflow: clip;*/
+}
+.udc_item em.s_label {
+background-position: -392px 0px;
+}
+.udc_item em.multi_text {
+background-position: 0px 0px;
+}
+.udc_item em.single_text {
+background-position: -28px 0px;
+}
+.udc_item em.password {
+background-position: -56px 0px;
+}
+.udc_item em.group {
+background-position: -84px 0px;
+}
+.udc_item em.hind_area {
+background-position: -112px 0px;
+}
+.udc_item em.link {
+background-position: -140px 0px;
+}
+.udc_item em.single_selected {
+background-position: -168px 0px;
+}
+.udc_item em.multi_selected {
+background-position: -196px 0px;
+}
+.udc_item em.pd_selected {
+background-position: -224px 0px;
+}
+.udc_item em.upload_file {
+background-position: -252px 0px;
+}
+.udc_item em.click_button {
+background-position: -280px 0px;
+}
+.udc_item em.image {
+background-position: -308px 0px;
+}
+.udc_item em.span_block {
+background-position: -336px 0px;
+}
+.udc_item em.area {
+background-position: -364px 0px;
+}
