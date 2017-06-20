@@ -4,7 +4,7 @@
         <div class="article-info">
             <img src="/Public/Image/{$detail['img_url']}" />
            <h1 class="title">{$detail['article_title']}</h1>
-            <div class="author">{$detail['article_author']} | {$detail['addtime']}</div>
+            <div class="author">{$detail['article_author']} | {$detail['add_time']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: larger;color: red">原创</span></div>
         </div>
 
         <div class="content">
@@ -31,58 +31,7 @@
 {include Public/sidebar.html}
 </div>
 {include Public/footer.html}
-
-<script type="text/javascript">
-    //检查页面域名
-    (function(){
-        var url = window.location.href;
-        if (url.indexOf('http://fex-team.github.io') !== -1) {
-            window.location.href = url.replace('http://fex-team.github.io','http://fex.baidu.com');
-        };
-    })();
-</script>
-
 <script>
-    var page = "/blog/2017/05/fex-weekly-15/";
-</script>
-
-
-<script type="text/javascript">
-    (function(){
-        //修复 markdown解析更换导致a链接未自动识别的问题
-        function replaceURLWithHTMLLinks(text) {
-            var exp = /[^"'](\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-            return text.replace(exp,"<a target='_blank' href='$1'>$1</a>");
-        }
-        if(document.querySelector && document.title.indexOf("技术周刊") > -1){
-            var content = document.querySelector(".content");
-            if(content){
-                content.innerHTML = replaceURLWithHTMLLinks(content.innerHTML);
-            }
-        }
-    })();
-
-    //设置站外链接新页面打开
-    var a_list= document.getElementsByTagName("a");
-    for(var i=0;i<a_list.length;i++){
-        var href = a_list[i].href;
-        if( href && String(href).indexOf(window.location.host) < 0 ){
-            a_list[i].target = "_blank";
-        }
-    }
-</script>
-
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var domain = document.domain;
-        if(domain === "fex.baidu.com") {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?5cfaa6810a02b4f45dc2c55614d98f57";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        }
-    })();
     hljs.initHighlightingOnLoad();
 </script>
 </body>

@@ -20,7 +20,7 @@
                 $data["content_description"]= $_POST["content_description"];
                 $data["content"]            = $_POST["content"];
                 //$data['score'] = $_POST['score'];
-                $data["addtime"]            = date("F d,Y",time());
+                $data["add_time"]           = date("F d,Y",time());
                 $arr = $studyModel->addContent($data);
                 if($arr)
                 {
@@ -45,7 +45,7 @@
                 $data["img_url"]            = $_POST["img_url"];
                 $data["content_description"]= $_POST["content_description"];
                 $data["content"]            = $_POST["content"];
-                $data["addtime"]            = date("F d,Y",time());
+                $data["update_time"]        = date("F d,Y",time());
                 $arr = $studyModel->updateContent($data);
                 if($arr)
                 {

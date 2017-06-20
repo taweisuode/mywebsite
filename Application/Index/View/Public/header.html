@@ -25,15 +25,11 @@
 <div class="page-header">
     <a href="/"><div class="logo"></div></a>
     <ul class="page-nav page-navi-articles">
-        <li><a href="/">首页</a></li>
-        <li><a href="/articles/">技术</a></li>
-        <li><a href="/Guide/Index/index">ppf用户手册</a></li>
-        <li><a href="/we-need-you/" target="_blank">我们需要你</a></li>
-        <li><a href="/weekly/">技术周刊</a></li>
-        <li><a href="https://github.com/fex-team/" target="_blank">Github</a></li>
-        <li><a href="https://speakerdeck.com/baidufe" target="_blank">Slides</a></li>
+        <li {if Dispath::$current_module ==  Index && Dispath::$current_controller ==  Index && Dispath::$current_action == index }class="current"{/if}><a href="/">首页</a></li>
+        <li><a href="/Index/Blog/list">技术博客</a></li>
+        <li><a href="/Guide/Index/index" target="_blank">ppf用户手册</a></li>
+        <li><a href="https://github.com/taweisuode/" target="_blank">Github</a></li>
     </ul>
-    <a class="rss" target="_blank" href="http://fex.baidu.com/feed.xml"></a>
 </div>
 
 <link rel="stylesheet" href="/Public/Css/synatx.css">
