@@ -41,33 +41,6 @@
 
         </div>
 
-
-        <div id="page-content" class="clearfix" style="height: 93px;">
-
-            <div class="page-header position-relative" style="padding-bottom: 0px;">
-                <h1>查询条件 <input type="button" onclick="window.location.href='__APP__/User/changename'">
-                    <small><i class="icon-double-angle-right"></i></small>
-                </h1>
-                <form method="post" action="__APP__/User/userlist" id="formid"
-                      style="padding-bottom: 0px;height: 52px;">
-                    <td colspan="2">查询条件：</td>
-                    <td colspan="10">
-                        <input type="hidden" name="page" id="page" value="1"/>
-                        开始时间：<input type="text" style="width:70px" onfocus="HS_setDate(this)" value="{$arr.start}"
-                                    name="start">
-                        结束时间：<input type="text" style="width:70px" onfocus="HS_setDate(this)" value="{$arr.end}"
-                                    name="end">
-                        用户名：<input type="text" id="" name="select_name" class="input_err" value="{$arr.select_name}"/>
-                        姓名：<input type="text" id="" name="select_names" class="input_err" value="{$arr.select_names}"/>
-                        电话：<input type="text" id="" name="select_tel" class="input_err" value="{$arr.select_tel}"/>
-                        email：<input type="text" id="" name="select_email" class="input_err2"
-                                     value="{$arr.select_email}"/>
-                        商户名称：<input type="text" id="" name="select_license_name" class="input_err2"
-                                    value="{$arr.select_license_name}"/></td>
-                    <td><input type="submit" value="点击查询" class="anniu"/></td>
-                </form>
-            </div>
-        </div>
         <!--/page-header-->
 
         <div class="row-fluid">
@@ -80,10 +53,10 @@
                             <th>序号</th>
                             <th>文章标题</th>
                             <th>文章作者</th>
-                            <th>内容1小标题</th>
-                            <th>文章内容1</th>
-                            <th>内容2小标题</th>
-                            <th>文章内容2</th>
+                            <th>文章类型</th>
+                            <th>文章链接</th>
+                            <th>首页图片</th>
+                            <th>内容描述</th>
                             <th>浏览数</th>
                             <th class="hidden-480">操作</th>
                         </tr>
@@ -99,10 +72,10 @@
                             </td>
                             <td>{$val['article_title']}</td>
                             <td>{$val['article_author']}</td>
-                            <td>{$val['small_title1']}</td>
-                            <td>{php echo substr($val['article_content1'],0,200)."...";}{/php}</td>
-                            <td>{$val['small_title2']}</td>
-                            <td>{php echo substr($val['article_content2'],0,200)."...";}{/php}</td>
+                            <td>{$val['type']}</td>
+                            <td>{$val['article_link']}</td>
+                            <td><img src="{$val['img_url']}" /></td>
+                            <td>{php echo substr($val['content_description'],0,100)."...";}{/php}</td>
                             <td>{$val['count']}</td>
                             <td>
                                 <div class="inline position-relative">
@@ -158,10 +131,10 @@
                         {/foreach}
 
                         <tr>
-                            <td colspan='6' class="pager">{$pagestring}</td>
+                            <td colspan='10' class="pager">{$pagestring}</td>
                         </tr>
                         <tr>
-                            <td colspan='6' class="add">
+                            <td colspan='10' class="add">
                                 <input type='button' value="添加新数据"
                                        onclick="window.location.href='/Admin/Study/add';"></td>
                         </tr>

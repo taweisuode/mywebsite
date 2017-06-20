@@ -8,8 +8,11 @@
          * @desc 博客详情页
          */
         Public function detailAction() {
+            $detail_id = $_GET['id'];
+            $studyModel = new StudyModel();
+            $detail = $studyModel->get_detail($detail_id);
             $this->load('Common/Function');
-            $this->view->assign("title","关于请求被挂起页面加载缓慢问题的追查");
+            $this->view->assign("detail",$detail);
             $this->view->show();
         }
         Public function addAction() {

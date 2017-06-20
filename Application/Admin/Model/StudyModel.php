@@ -17,5 +17,27 @@ class StudyModel extends Model
         }
         return false;
     }
+    public function updateContent($data) {
+        if(!empty($data)) {
+            $this->db->where(array("id"=>$data['id']));
+            unset($data['id']);
+            return $this->db->update($this->_tablename,$data);
+        }
+        return false;
+    }
+    public function delete($id) {
+        if(!empty($id)) {
+            $this->db->where(array("id"=>$id));
+            return $this->db->delete($this->_tablename);
+        }
+        return 0;
+    }
+    public function get_detail($id) {
+        $this->db->select("*");
+        $this->db->from($this->_tablename);
+        $select = $this->db->where(array("id"=>$id));
+        $result = $select->fetchRow();
+        return $result;
+    }
 }
 ?>

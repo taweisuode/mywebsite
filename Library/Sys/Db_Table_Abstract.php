@@ -145,6 +145,7 @@ class Db_Table_Abstract
         }else {
             var_dump("update 语句请输入where条件");die;
         }
+        //echo $sql;die;
         return $this->exec($sql);
 
     }
