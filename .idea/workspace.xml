@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7fa95641-8213-4568-866b-34278b04f2a8" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Index/View/Blog/detail.html" afterPath="$PROJECT_DIR$/Application/Index/View/Blog/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ppf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,35 +35,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="folder.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/folder.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="108" selection-end-column="9" />
-              <folding>
-                <element signature="n#style#0;n#code#0;n#pre#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Study/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="70" selection-start-line="84" selection-start-column="66" selection-end-line="84" selection-end-column="70" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Index/View/Blog/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65789473">
-              <caret line="91" column="52" selection-start-line="91" selection-start-column="52" selection-end-line="91" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.42105263">
+              <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/sidebar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -124,8 +123,8 @@
       <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -164,7 +163,6 @@
         <option value="$PROJECT_DIR$/Public/Css/var_dump/default.css" />
         <option value="$PROJECT_DIR$/Public/Css/var_dump/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/Application/Guide/View/General/assign.html" />
-        <option value="$PROJECT_DIR$/Application/Index/View/Public/footer.html" />
         <option value="$PROJECT_DIR$/Application/Guide/View/Public/footer.html" />
         <option value="$PROJECT_DIR$/Application/Index/View/Index/vardump.html" />
         <option value="$PROJECT_DIR$/Application/Index/View/Public/sidebar.html" />
@@ -191,9 +189,10 @@
         <option value="$PROJECT_DIR$/Public/Library/ckeditor/ckeditor.js" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/StudyModel.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Study/edit.html" />
-        <option value="$PROJECT_DIR$/Application/Index/View/Public/header.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/StudyController.php" />
         <option value="$PROJECT_DIR$/Library/Sys/Db_Table_Abstract.php" />
+        <option value="$PROJECT_DIR$/Application/Index/View/Public/footer.html" />
+        <option value="$PROJECT_DIR$/Application/Index/View/Public/header.html" />
         <option value="$PROJECT_DIR$/Application/Index/View/Blog/detail.html" />
       </list>
     </option>
@@ -813,23 +812,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34759358">
-          <caret line="13" column="104" selection-start-line="13" selection-start-column="101" selection-end-line="13" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/Image/ppf_menu.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.708334">
-          <caret line="51" column="341" selection-start-line="51" selection-start-column="341" selection-end-line="51" selection-end-column="341" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/nav.html">
@@ -1106,14 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/Controller/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1157,10 +1134,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/View/Blog/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65789473">
-          <caret line="91" column="52" selection-start-line="91" selection-start-column="52" selection-end-line="91" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.42105263">
+          <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
           <folding />
         </state>
       </provider>
