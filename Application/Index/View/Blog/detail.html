@@ -2,7 +2,7 @@
 <div class="container">
     <article>
         <div class="article-info">
-            <img src="{$detail['img_url']}" />
+            <img src="/Public/Image/{$detail['img_url']}" />
            <h1 class="title">{$detail['article_title']}</h1>
             <div class="author">{$detail['article_author']} | {$detail['addtime']}</div>
         </div>
@@ -84,6 +84,14 @@
         }
     })();
     hljs.initHighlightingOnLoad();
+</script>
+<div id="SOHUCS" sid="id={$detail['id']}"></div>
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: 'cyt4A398W',
+        conf: 'e93c80b0475405d28ba262ad0d5f34f9'
+    });
 </script>
 </body>
 </html>
