@@ -1,4 +1,4 @@
-body { font: 14px/1.5 jaf-bernino-sans, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif; }
+body { font: 14px/1.5 jaf-bernino-sans, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;font-family: '微软雅黑' }
 
 .page-header { width: 1200px; margin: 0 auto; height: 90px; position: relative; }
 .page-header .logo { background: url(/public/images/logo.png) no-repeat center center; width: 236px; height: 80px; }
