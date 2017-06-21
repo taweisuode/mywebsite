@@ -22,7 +22,7 @@ body { font: 14px/1.5 jaf-bernino-sans, 'Lucida Grande', 'Lucida Sans Unicode', 
 .articles { float: left; width: 900px; }
 
 article { float: left; width: 900px; background: #ffffff; width: 860px; padding: 20px; margin: 0 0 30px 0; box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
-article p, article h1, article h2, article h3, article h4, article h5, article a { font-family: Museo, Segoe, "Segoe UI", Helvetica, Arial, sans-serif; }
+article p, article h1, article h2, article h3, article h4, article h5, article a { font-family: Museo, Segoe, "Segoe UI", Helvetica, Arial, sans-serif; font-family: '微软雅黑'}
 article p { margin: 10px 0; }
 article a:link, article a:visited, article a:link:hover, article a:visited:hover { color: #ea3e0a; margin: 0 2px; overflow-wrap: break-word; }
 article a:hover { color: #ea3e0a; margin: 0 2px; text-decoration: underline; }
