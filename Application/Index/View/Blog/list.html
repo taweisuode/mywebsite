@@ -1,0 +1,76 @@
+{include Public/header.html}
+<div class="container">
+    <div class="post-lists">
+    <style>
+        .cates {
+            overflow: hidden;
+            font-size: 16px;
+            margin-bottom: 15px;
+            height: 50px;
+            line-height: 50px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .cates ul {
+            display: block;
+            white-space: nowrap;
+            height: 100%;
+            font-size: 0;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+        .cates li {
+            display: inline-block;
+            padding: 0 10px;
+            font-size: 16px;
+            margin: 10px 10px 10px 0;
+            height: 30px;
+            line-height: 30px;
+        </style>
+        <nav class="cates">
+            <ul>
+                <li class="cate-menu-item active"><a href="/index.html" class="cate-menu-link">全部文章</a></li>
+                <li class="cate-menu-item"><a href="/cates/Web开发/index.html" class="cate-menu-link">Web开发</a></li>
+                <li class="cate-menu-item"><a href="/cates/移动开发/index.html" class="cate-menu-link">移动开发</a></li>
+                <li class="cate-menu-item"><a href="/cates/NodeJS/index.html" class="cate-menu-link">NodeJS</a></li>
+                <li class="cate-menu-item"><a href="/cates/性能优化/index.html" class="cate-menu-link">性能优化</a></li>
+                <li class="cate-menu-item"><a href="/cates/项目总结/index.html" class="cate-menu-link">项目总结</a></li>
+                <li class="cate-menu-item"><a href="/cates/体验报告/index.html" class="cate-menu-link">体验报告</a></li>
+                <li class="cate-menu-item"><a href="/cates/资源合集/index.html" class="cate-menu-link">资源合集</a></li>
+                <li class="cate-menu-item"><a href="/cates/生活玩乐/index.html" class="cate-menu-link">生活玩乐</a></li>
+            </ul>
+        </nav>
+        <ul class="post-list">
+            {foreach name=$list item=key value=val}
+            <li title="{$val['article_title']}">
+                <a href="/Index/Blog/detail?id={$val['id']}">
+
+                    <div class="bnwrap">
+
+                        <img src="/Public/Image/{$val['img_url']}"/>
+
+                    </div>
+                    <p>{$val['article_title']}</p>
+                    <span class="date">{$val['article_author']} 发布于 {$val['add_time']}</span>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+
+
+        <!-- Pagination links -->
+        <div class="getmore">
+            <a href="/articles/page2">查看更多</a>
+        </div>
+
+
+    </div>
+    {include Public/sidebar.html}
+
+</div>
+{include Public/footer.html}
+</body>
+</html>
+

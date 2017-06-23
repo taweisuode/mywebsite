@@ -15,25 +15,10 @@
             $this->view->assign("detail",$detail);
             $this->view->show();
         }
-        Public function addAction() {
+        public function listAction() {
             $indexModel = new IndexModel();
-            $movie_list = $indexModel->test();
-
-            $fruit = array("loving"=>'banana',"hating"=>'apple',"no_sense"=>'orange');
-            $test = array(
-                "aaa" => array(
-                    "yes" => "no",
-                    "sad" => 'happy'
-                ),
-                "bbb" => array(
-                    "one" => "two",
-                    "three"=> "four"
-                )
-            );
-            $this->view->assign("movie_list",$movie_list);
-            $this->view->assign("fruit",$fruit);
-            $this->view->assign("test",$test);
-            $this->view->assign("result","hello");
+            $list = $indexModel->getIndexList();
+            $this->view->assign("list",$list);
             $this->view->show();
         }
 
