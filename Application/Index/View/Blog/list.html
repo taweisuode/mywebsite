@@ -35,11 +35,11 @@
         }
         </style>
         <nav class="cates">
-            <ul>
-                <li class="cate-menu-item active"><a href="/index.html" class="cate-menu-link">全部文章</a></li>
-                <li class="cate-menu-item"><a href="/cates/Web开发/index.html" class="cate-menu-link">Web开发</a></li>
-                <li class="cate-menu-item"><a href="/cates/移动开发/index.html" class="cate-menu-link">移动开发</a></li>
-                <li class="cate-menu-item"><a href="/cates/NodeJS/index.html" class="cate-menu-link">NodeJS</a></li>
+            <ul style="padding-left:1%">
+                <li class="cate-menu-item {if $tag == null}active{/if}"><a href="/Index/Blog/list" class="cate-menu-link">全部文章</a></li>
+                <li class="cate-menu-item {if $tag == php}active{/if}"><a href="/Index/Blog/list?tag=php" class="cate-menu-link">php</a></li>
+                <li class="cate-menu-item {if $tag == c}active{/if}"><a href="/Index/Blog/list?tag=c" class="cate-menu-link">c/c++</a></li>
+                <li class="cate-menu-item"><a href="/Index/Blog/list?tag=mobile" class="cate-menu-link">移动开发</a></li>
                 <li class="cate-menu-item"><a href="/cates/性能优化/index.html" class="cate-menu-link">性能优化</a></li>
                 <li class="cate-menu-item"><a href="/cates/项目总结/index.html" class="cate-menu-link">项目总结</a></li>
                 <li class="cate-menu-item"><a href="/cates/体验报告/index.html" class="cate-menu-link">体验报告</a></li>
@@ -54,7 +54,7 @@
 
                     <div class="bnwrap">
 
-                        <img src="/Public/Image/{$val['img_url']}"/>
+                        <img src="/Public/Files/Upload/{$val['img_url']}"/>
 
                     </div>
                     <p>{$val['article_title']}</p>

@@ -37,11 +37,36 @@
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
-                    <form id="myform" name="myform" class="form-horizontal border" method="post" action="/Admin/Study/edit">
+                    <form id="myform" name="myform" class="form-horizontal border" method="post" action="/Admin/Study/edit" enctype="multipart/form-data" >
                         <div class="form-group">
                             <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>文章标题：</label>
                             <div class="col-xs-10">
                                 <input type="text" id="title" name="title" ng-model="product.tag" class="col-xs-6" value="{$detail['article_title']}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>作者头像：</label>
+                            <div id="preview1">
+                                <img id="imghead1" width="20%" height="auto" border="0" src="/Public/Files/Upload/{$detail['author_img']}" style="margin-left: 2%;">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="file" name="author_img" onchange="previewImage(this,'preview1','imghead1')" style="margin-left: 22%;margin-top: 20px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>文章缩略图：</label>
+                            <div id="preview2">
+                                <img id="imghead2" width="20%" height="auto" border="0" src="/Public/Files/Upload/{$detail['img_url']}" style="margin-left: 2%;">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="file" name="img_url" onchange="previewImage(this,'preview2','imghead2')" style="margin-left: 22%;margin-top: 20px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>文章tag：</label>
+                            <div class="col-xs-10">
+                                <input type="radio"  name="tag" value="php" {if $detail['tag'] == php}checked="checked"{/if}/> php
+                                <input type="radio"  name="tag" value="c"  {if $detail['tag'] == c}checked="checked"{/if}/> c
                             </div>
                         </div>
                         <div class="form-group">
@@ -92,21 +117,8 @@
     </div>
 </div>
         <!--/row-->
-        {include Public/footer.html}
-        </body>
+{include Public/footer.html}
+</body>
 <script type="text/javascript" src="/Public/Library/ckeditor/ckeditor.js"></script>
-<script>
-    $('input[name=article_type]').change(function() {
-        if($(this).val() == 2) {
-            $("#link_div").removeClass("hidden");
-            $("#author_div").removeClass("hidden");
-        }else {
-            $("#link_div").addClass("hidden");
-            $("#author_div").addClass("hidden");
-        }
-    })
-    $("#save").click(function() {
-        $("form").submit;
-    })
-</script>
-        </html>
+<script type="text/javascript" src="/Public/Js/admin/study.add.update.js"></script>
+</html>

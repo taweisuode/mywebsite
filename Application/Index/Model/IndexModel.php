@@ -3,9 +3,12 @@ error_reporting(E_ALL ^ E_NOTICE);
 class IndexModel extends Model
 {
     protected $_tablename = 'phplist';
-    public function getIndexList() {
+    public function getIndexList($tag = "") {
         $this->db->select("id,article_title,article_author,img_url,add_time");
         $this->db->from($this->_tablename);
+        if(!empty($tag)) {
+            $this->db->where(array('tag'=>$tag));
+        }
         $select = $this->db->orderby("id","desc");
         $result = $select->fetchAll();
         return $result;

@@ -11,47 +11,79 @@
         }
         public function addAction() {
             if($_POST) {
+                //加载上传图片公共类
+                $this->load("Common/upload");
+                $upload = new FileUpload();
+                if(!$upload->upload('author_img')) {
+                    echo "<script>alert('上传作者头像失败！');history.go(-1);";die;
+                }
+                $author_img = $upload->getFileName();
+
+                if(!$upload->upload('img_url')) {
+                    echo "<script>alert('上传文章缩略图失败！');history.go(-1);";die;
+                }
+                $img_url = $upload->getFileName();
+
                 $studyModel = new StudyModel();
                 $data["article_title"]      = $_POST["title"];
                 $data['type']               = $_POST["article_type"];
                 $data["article_link"]       = $_POST['article_link'];
                 $data["article_author"]     = !empty($_POST['author']) ? $_POST['author'] : "庄景鹏";
-                $data["img_url"]            = $_POST["img_url"];
+                $data["author_img"]         = $author_img;
+                $data["img_url"]            = $img_url;
                 $data["content_description"]= $_POST["content_description"];
                 $data["content"]            = $_POST["content"];
+                $data["tag"]                = $_POST["tag"];
                 //$data['score'] = $_POST['score'];
                 $data["add_time"]           = date("F d,Y",time());
+
                 $arr = $studyModel->addContent($data);
-                if($arr)
-                {
+                if($arr) {
                     echo "<script>alert('发表成功！');window.location.href='/Admin/Study/list'</script>";
-                }else
-                {
+                }else {
                     echo "<script>alert('发表失败！');history.go(-1);";
                 }
             }
             $this->view->show();
         }
         public function editAction() {
-            $id = $_GET['id'];
+            $id = $_REQUEST['id'];
             $studyModel = new StudyModel();
             $detail = $studyModel->get_detail($id);
             if($_POST) {
+                //加载上传图片公共类
+                $upload_author_img = $_FILES['author_img'];
+                $upload_img_url = $_FILES['img_url'];
+                $author_img = $detail['author_img'];
+                $img_url = $detail['img_url'];
+                if($upload_author_img['name'] || $upload_img_url['name']) {
+                    $this->load("Common/upload");
+                    $upload = new FileUpload();
+                    if(!$upload->upload('author_img')) {
+                        echo "<script>alert('上传作者头像失败！');history.go(-1);";die;
+                    }
+                    $author_img = $upload->getFileName();
+
+                    if(!$upload->upload('img_url')) {
+                        echo "<script>alert('上传文章缩略图失败！');history.go(-1);";die;
+                    }
+                    $img_url = $upload->getFileName();
+                }
                 $data['id']                 = $_POST['id'];
                 $data["article_title"]      = $_POST["title"];
-                $data['type']               = $_POST["content_type"];
+                $data['type']               = $_POST["article_type"];
                 $data["article_link"]       = $_POST['article_link'];
                 $data["article_author"]     = !empty($_POST['author']) ? $_POST['author'] : "庄景鹏";
-                $data["img_url"]            = $_POST["img_url"];
+                $data["author_img"]         = $author_img;
+                $data["img_url"]            = $img_url;
                 $data["content_description"]= $_POST["content_description"];
                 $data["content"]            = $_POST["content"];
+                $data["tag"]                = $_POST["tag"];
                 $data["update_time"]        = date("F d,Y",time());
                 $arr = $studyModel->updateContent($data);
-                if($arr)
-                {
+                if($arr) {
                     echo "<script>alert('发表成功！');window.location.href='/Admin/Study/list'</script>";
-                }else
-                {
+                }else {
                     echo "<script>alert('发表失败！');window.location.href='/Admin/Study/list'</script>";
                 }
             }
@@ -62,11 +94,9 @@
             $id = $_GET['id'];
             $studyModel = new StudyModel();
             $result = $studyModel->delete($id);
-            if($result > 0)
-            {
+            if($result > 0) {
                 echo "<script>alert('删除成功！');window.location.href='/Admin/Study/list'</script>";
-            }else
-            {
+            }else {
                 echo "<script>alert('删除失败！');history.go(-1);";
             }
         }

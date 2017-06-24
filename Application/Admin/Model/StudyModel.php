@@ -6,7 +6,7 @@ class StudyModel extends Model
     public function getList() {
         $this->db->select("*");
         $this->db->from($this->_tablename);
-        $select  = $this->db->orderby("add_time","desc");
+        $select  = $this->db->orderby("id","desc");
         $result = $select->fetchAll();
         return $result;
 

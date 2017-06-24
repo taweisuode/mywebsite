@@ -16,9 +16,11 @@
             $this->view->show();
         }
         public function listAction() {
+            $tag = $_GET['tag'];
             $indexModel = new IndexModel();
-            $list = $indexModel->getIndexList();
+            $list = $indexModel->getIndexList($tag);
             $this->view->assign("list",$list);
+            $this->view->assign("tag",$tag);
             $this->view->show();
         }
 

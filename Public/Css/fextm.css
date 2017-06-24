@@ -90,7 +90,6 @@ article blockquote p { text-indent: 1.5em; margin: 0 !important; }
     .container .post-list li { box-sizing: border-box; width: 48%; display: block; margin: 0 1% 20px; } }
 @media (max-width: 640px) { html { overflow-x: hidden; }
     .page-header, .page-footer, .container, .articles, article, .post-lists { width: 100%; }
-    .page-nav li:nth-child(2) { display: none; }
     .page-nav li:nth-child(5) { display: none; }
     .page-nav li:nth-child(6) { display: none; }
     .page-nav li:nth-child(7) { display: none; }

@@ -26,7 +26,7 @@
     <a href="/"><div class="logo"></div></a>
     <ul class="page-nav page-navi-articles">
         <li {if Dispath::$current_module ==  Index && Dispath::$current_controller ==  Index && Dispath::$current_action == index }class="current"{/if}><a href="/">首页</a></li>
-        <li><a href="/Index/Blog/list">技术博客</a></li>
+        <li {if Dispath::$current_controller ==  Blog}class="current"{/if} ><a href="/Index/Blog/list">技术博客</a></li>
         <li><a href="/Guide/Index/index" target="_blank">ppf用户手册</a></li>
         <li><a href="https://github.com/taweisuode/" target="_blank">Github</a></li>
     </ul>

@@ -13,10 +13,10 @@
 
             <ul class="breadcrumb">
 
-                <li><i class="icon-home"></i> <a href="__APP__/Index/index">Home</a><span class="divider"><i
+                <li><i class="icon-home"></i> <a href="/Admin/Index/index">Home</a><span class="divider"><i
                         class="icon-angle-right"></i></span></li>
 
-                <li class="active">PHP入门与精通</li>
+                <li class="active">博客列表</li>
             </ul>
             <!--.breadcrumb-->
 
@@ -54,9 +54,9 @@
                             <th>文章标题</th>
                             <th>文章作者</th>
                             <th>文章类型</th>
-                            <th>文章链接</th>
+                            <th>作者头像</th>
                             <th>首页图片</th>
-                            <th>内容描述</th>
+                            <th>文章tag</th>
                             <th>浏览数</th>
                             <th class="hidden-480">操作</th>
                         </tr>
@@ -67,15 +67,15 @@
                         {foreach name=$list item=key value=val}
 
                         <tr>
-                            <td width="35px;"><input type="checkbox" name="checkbox" id="checkbox{$k}"
-                                                     style="margin-top: 0px;" value='{$vo.user_id}'/>{$k+$offset}
-                            </td>
+                            <td width="5%">{$key+1}</td>
                             <td>{$val['article_title']}</td>
                             <td>{$val['article_author']}</td>
                             <td>{$val['type']}</td>
-                            <td>{$val['article_link']}</td>
-                            <td><img src="{$val['img_url']}" /></td>
-                            <td>{php echo substr($val['content_description'],0,100)."...";}{/php}</td>
+                            <td><img src="/Public/Files/Upload/{$val['author_img']}"
+                                     style="width: 100px;height: 100px"/></td>
+                            <td><img src="/Public/Files/Upload/{$val['img_url']}" style="width: 100px;height: 100px"/>
+                            </td>
+                            <td>{$val['tag']}</td>
                             <td>{$val['count']}</td>
                             <td>
                                 <div class="inline position-relative">
@@ -156,6 +156,7 @@
             </div>
         </div>
     </div>
-    {include Public/footer.html}
-    </body>
-    </html>
+</div>
+{include Public/footer.html}
+</body>
+</html>
