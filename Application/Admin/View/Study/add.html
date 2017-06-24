@@ -45,6 +45,60 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>上传图片：</label>
+                            <!--  <div class="col-xs-2">
+                                 <ul class="ace-thumbnails">
+                                     <li class="no-border">
+                                         <img width="160" height="100" ng-src="{ldelim}{ldelim}product.bgimg{rdelim}{rdelim}" />
+                                         <div class="upload-percent fade">0%</div>
+                                         <div class="tools tools-bottom in">
+                                             <a title="上传图片">
+                                                 <input id="bgimg" name="bgimg" type="file" class="hide" />
+                                             </a>
+                                             <a href="javascript:void(0);" onclick="Product.removeIcon('bgimg')" title="删除图片">
+                                                 <i class="ace-icon fa fa-times red"></i>
+                                             </a>
+                                         </div>
+                                     </li>
+                                 </ul>
+                                 <span class="alert-danger thumbnails-text">首页背景图 260*191</span>
+                             </div>   -->
+                            <div class="col-xs-2">
+                                <ul class="ace-thumbnails">
+                                    <li class="no-border">
+                                        <img width="160" height="100" ng-src="{ldelim}{ldelim}product.bigimg{rdelim}{rdelim}" />
+                                        <div class="upload-percent fade">0%</div>
+                                        <div class="tools tools-bottom in">
+                                            <a title="上传图片">
+                                                <input id="bigimg" name="bigimg" type="file" class="hide" />
+                                            </a>
+                                            <a href="javascript:void(0);" onclick="Product.removeIcon('bigimg')" title="删除图片">
+                                                <i class="ace-icon fa fa-times red"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <span class="alert-danger thumbnails-text">PC详情页大图 1350*490</span>
+                            </div>
+                            <div class="col-xs-2">
+                                <ul class="ace-thumbnails">
+                                    <li class="no-border">
+                                        <img width="160" height="100" ng-src="{ldelim}{ldelim}product.m_bigimg{rdelim}{rdelim}" />
+                                        <div class="upload-percent fade">0%</div>
+                                        <div class="tools tools-bottom in">
+                                            <a title="上传图片">
+                                                <input id="m_bigimg" name="m_bigimg" type="file" class="hide" />
+                                            </a>
+                                            <a href="javascript:void(0);" onclick="Product.removeIcon('m_bigimg')" title="删除图片">
+                                                <i class="ace-icon fa fa-times red"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <span class="alert-danger thumbnails-text">移动详情页大图640*320</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>文章类型：</label>
                             <div class="col-xs-10">
                                 <input type="radio"  name="article_type" value="1" checked="checked"/> 原创
@@ -94,6 +148,7 @@
         {include Public/footer.html}
         </body>
 <script type="text/javascript" src="/Public/Library/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/Public/Library/uploadify/jquery.uploadify.js"></script>
 <script>
     $('input[name=article_type]').change(function() {
         if($(this).val() == 2) {

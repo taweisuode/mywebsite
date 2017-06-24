@@ -44,7 +44,7 @@ article .highlight:hover { border-color: #ff6136; }
 article .highlight code { font-size: 12px; line-height: 14px; font-family: Menlo, Consolas, "Liberation Mono", Courier, monospace; }
 article #comment { margin: 20px 5px; border-top: 1px solid #dadada; padding: 10px 0; }
 article blockquote { background: #f9f9f9; border-left: 10px solid #ccc; margin: 1.5em 10px; padding: 0.5em 10px; position: relative; quotes: "\201C" "\201D" "\2018" "\2019"; }
-article blockquote:before { color: #ccc; content: open-quote; font-size: 2em; position: absolute; }
+article blockquote:before { color: #ccc; font-size: 2em; position: absolute; }
 article blockquote p { text-indent: 1.5em; margin: 0 !important; }
 
 .getmore { margin: 0 0 0 14px; }

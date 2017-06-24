@@ -13,7 +13,7 @@
             if($_POST) {
                 $studyModel = new StudyModel();
                 $data["article_title"]      = $_POST["title"];
-                $data['type']               = $_POST["content_type"];
+                $data['type']               = $_POST["article_type"];
                 $data["article_link"]       = $_POST['article_link'];
                 $data["article_author"]     = !empty($_POST['author']) ? $_POST['author'] : "庄景鹏";
                 $data["img_url"]            = $_POST["img_url"];
