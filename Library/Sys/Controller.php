@@ -20,13 +20,13 @@ class Controller
         restore_exception_handler();
         set_exception_handler(array($this,"setExceptionHandler"));
 
-        $this->view = new View();
-
         session_start();
         if(!empty($_SESSION)) {
             self::$session = $_SESSION;
 
         }
+
+        $this->view = new View();
 
     }
     public function setExceptionHandler(Throwable $e = null) {
