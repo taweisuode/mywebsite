@@ -37,14 +37,16 @@
         <nav class="cates">
             <ul style="padding-left:1%">
                 <li class="cate-menu-item {if $tag == null}active{/if}"><a href="/Index/Blog/list" class="cate-menu-link">全部文章</a></li>
-                <li class="cate-menu-item {if $tag == php}active{/if}"><a href="/Index/Blog/list?tag=php" class="cate-menu-link">php</a></li>
-                <li class="cate-menu-item {if $tag == c}active{/if}"><a href="/Index/Blog/list?tag=c" class="cate-menu-link">c/c++</a></li>
-                <li class="cate-menu-item"><a href="/Index/Blog/list?tag=mobile" class="cate-menu-link">移动开发</a></li>
+                {foreach name=$tagList item=key value=val}
+                    <li class="cate-menu-item {if $tag == $val['tag']}active{/if}"><a href="/Index/Blog/list?tag={$val['tag']}" class="cate-menu-link">{$val['tag']}</a></li>
+                {/foreach}
+                <!--
                 <li class="cate-menu-item"><a href="/cates/性能优化/index.html" class="cate-menu-link">性能优化</a></li>
                 <li class="cate-menu-item"><a href="/cates/项目总结/index.html" class="cate-menu-link">项目总结</a></li>
                 <li class="cate-menu-item"><a href="/cates/体验报告/index.html" class="cate-menu-link">体验报告</a></li>
                 <li class="cate-menu-item"><a href="/cates/资源合集/index.html" class="cate-menu-link">资源合集</a></li>
                 <li class="cate-menu-item"><a href="/cates/生活玩乐/index.html" class="cate-menu-link">生活玩乐</a></li>
+                -->
             </ul>
         </nav>
         <ul class="post-list">
@@ -66,10 +68,11 @@
 
 
         <!-- Pagination links -->
+        <!--
         <div class="getmore">
             <a href="/articles/page2">查看更多</a>
         </div>
-
+        -->
 
     </div>
     {include Public/sidebar.html}

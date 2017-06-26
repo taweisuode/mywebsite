@@ -24,5 +24,11 @@ class StudyModel extends Model
         $result = $select->fetchRow();
         return $result;
     }
+    //获取文章标签列表
+    public function getTagList() {
+        $select = $this->db->select("*")->from("tags")->where(array("status"=>1));
+        $result = $select->fetchAll();
+        return $result;
+    }
 }
 ?>

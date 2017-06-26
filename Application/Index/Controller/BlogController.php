@@ -18,9 +18,12 @@
         public function listAction() {
             $tag = $_GET['tag'];
             $indexModel = new IndexModel();
+            $studyModel = new StudyModel();
             $list = $indexModel->getIndexList($tag);
+            $tagList =$studyModel->getTagList();
             $this->view->assign("list",$list);
             $this->view->assign("tag",$tag);
+            $this->view->assign("tagList",$tagList);
             $this->view->show();
         }
 

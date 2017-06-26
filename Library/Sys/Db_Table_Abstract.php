@@ -14,6 +14,7 @@ class Db_Table_Abstract
     private $strDsn;
     public $DbConnect;
     protected static $getInstance;
+    private $get_query_sql = "";
 
     public $DbSqlArr = array();
 
@@ -40,7 +41,12 @@ class Db_Table_Abstract
         }
         return self::$getInstance;
     }
-
+    public function get_query_sql() {
+        return $this->get_query_sql;
+    }
+    public function set_query_sql($sql) {
+        $this->get_query_sql = $sql;
+    }
     public function select($field = "*") {
         $new_field = "";
         $field_arr = explode(",", $field);
@@ -91,14 +97,18 @@ class Db_Table_Abstract
     public function fetchAll() {
         if (!empty($this->DbSqlArr)) {
             $sql = implode("", $this->DbSqlArr);
+            $this->set_query_sql($sql);
             $result = $this->query($sql,'all',false);
+            $this->DbSqlArr = "";
             return $result;
         }
     }
     public function fetchRow() {
         if (!empty($this->DbSqlArr)) {
             $sql = implode("", $this->DbSqlArr);
+            $this->set_query_sql($sql);
             $result = $this->query($sql,'row',false);
+            $this->DbSqlArr = "";
             return $result;
         }
     }
@@ -110,6 +120,7 @@ class Db_Table_Abstract
             $comma = ', ';
         }
         $sql = "insert into ".$table_name."(".$insertkeysql .")values(" .$insertvaluesql. ")";
+        $this->set_query_sql($sql);
         $returnid = $this->exec($sql);
         if($returnid) {
             return $this->DbConnect->lastInsertId();
@@ -124,6 +135,7 @@ class Db_Table_Abstract
         }else {
             var_dump("delete 语句请输入where条件");die;
         }
+        $this->set_query_sql($sql);
         return $this->exec($sql);
     }
     public function update($table_name,$set_list) {
@@ -145,7 +157,7 @@ class Db_Table_Abstract
         }else {
             var_dump("update 语句请输入where条件");die;
         }
-        //echo $sql;die;
+        $this->set_query_sql($sql);
         return $this->exec($sql);
 
     }

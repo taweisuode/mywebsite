@@ -65,8 +65,9 @@
                         <div class="form-group">
                             <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>文章tag：</label>
                             <div class="col-xs-10">
-                                <input type="radio"  name="tag" value="php" {if $detail['tag'] == php}checked="checked"{/if}/> php
-                                <input type="radio"  name="tag" value="c"  {if $detail['tag'] == c}checked="checked"{/if}/> c
+                                {foreach name=$tag item=key value=val}
+                                <input type="radio"  name="tag" value="{$val['tag']}" {if $val['tag'] == $detail['tag']}checked="checked"{/if} style="vertical-align: text-bottom;margin-bottom: -4px;"/> {$val['tag']}&nbsp;&nbsp;&nbsp;
+                                {/foreach}
                             </div>
                         </div>
                         <div class="form-group">

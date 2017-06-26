@@ -1,15 +1,19 @@
 <?php
     class StudyController extends Controller {
+        public function __CONSTRUCT() {
+            parent::__CONSTRUCT();
+            $this->studyModel = new StudyModel();
+        }
         public function indexAction() {
             $this->view->show();
         }
         public function listAction() {
-            $studyModel = new StudyModel();
-            $list = $studyModel->getList();
+            $list = $this->studyModel->getList();
             $this->view->assign("list",$list);
             $this->view->show();
         }
         public function addAction() {
+            $tagList =$this->studyModel->getTagList();
             if($_POST) {
                 //加载上传图片公共类
                 $this->load("Common/upload");
@@ -23,8 +27,6 @@
                     echo "<script>alert('上传文章缩略图失败！');history.go(-1);";die;
                 }
                 $img_url = $upload->getFileName();
-
-                $studyModel = new StudyModel();
                 $data["article_title"]      = $_POST["title"];
                 $data['type']               = $_POST["article_type"];
                 $data["article_link"]       = $_POST['article_link'];
@@ -37,19 +39,20 @@
                 //$data['score'] = $_POST['score'];
                 $data["add_time"]           = date("F d,Y",time());
 
-                $arr = $studyModel->addContent($data);
+                $arr = $this->studyModel->addContent($data);
                 if($arr) {
                     echo "<script>alert('发表成功！');window.location.href='/Admin/Study/list'</script>";
                 }else {
                     echo "<script>alert('发表失败！');history.go(-1);";
                 }
             }
+            $this->view->assign("tag",$tagList);
             $this->view->show();
         }
         public function editAction() {
+            $tagList =$this->studyModel->getTagList();
             $id = $_REQUEST['id'];
-            $studyModel = new StudyModel();
-            $detail = $studyModel->get_detail($id);
+            $detail = $this->studyModel->get_detail($id);
             if($_POST) {
                 //加载上传图片公共类
                 $upload_author_img = $_FILES['author_img'];
@@ -80,20 +83,20 @@
                 $data["content"]            = $_POST["content"];
                 $data["tag"]                = $_POST["tag"];
                 $data["update_time"]        = date("F d,Y",time());
-                $arr = $studyModel->updateContent($data);
+                $arr = $this->studyModel->updateContent($data);
                 if($arr) {
                     echo "<script>alert('发表成功！');window.location.href='/Admin/Study/list'</script>";
                 }else {
                     echo "<script>alert('发表失败！');window.location.href='/Admin/Study/list'</script>";
                 }
             }
+            $this->view->assign("tag",$tagList);
             $this->view->assign('detail',$detail);
             $this->view->show();
         }
         public function deleteAction() {
             $id = $_GET['id'];
-            $studyModel = new StudyModel();
-            $result = $studyModel->delete($id);
+            $result = $this->studyModel->delete($id);
             if($result > 0) {
                 echo "<script>alert('删除成功！');window.location.href='/Admin/Study/list'</script>";
             }else {

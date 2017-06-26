@@ -11,6 +11,8 @@ class IndexModel extends Model
         }
         $select = $this->db->orderby("id","desc");
         $result = $select->fetchAll();
+        $sql = $select->get_query_sql();
+        echo $sql;die;
         return $result;
     }
     public function test() {
