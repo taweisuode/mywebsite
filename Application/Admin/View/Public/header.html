@@ -24,10 +24,10 @@
     <![endif]-->
 </head>
 <body>
-<input type="hidden" id="the_session" value="{$Think.session.coolname}" />
+<input type="hidden" id="loginSession" value="{$login_session}" />
 <script>
-    var the_session = document.getElementById("the_session").value;
-    if(the_session == '')
+    var loginSession = document.getElementById("loginSession").value;
+    if(loginSession == '')
     {
         alert("请登录后操作");
         window.location.href="/Admin/Login/index";
