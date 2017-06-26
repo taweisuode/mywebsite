@@ -1,5 +1,5 @@
 {include Public/header.html}
-<img src="/Public/Image/banner.jpg" alt="" style="width: 100%" height="361px">
+<img class="lazy" src="/Public/Image/banner.jpg" alt="" style="width: 100%" height="361px">
 <div class="container">
     <div class="post-lists">
 
@@ -12,7 +12,7 @@
 
                     <div class="bnwrap">
 
-                        <img src="/Public/Files/Upload/{$val['img_url']}"/>
+                        <img class="lazy" data-original="/Public/Files/Upload/{$val['img_url']}" src="/Public/Image/zhanwei.jpg"/>
 
                     </div>
                     <p>{$val['article_title']}</p>
@@ -28,6 +28,11 @@
 
 </div>
 {include Public/footer.html}
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
 </body>
 </html>
 

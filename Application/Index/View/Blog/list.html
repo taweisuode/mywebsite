@@ -24,7 +24,7 @@
 
                     <div class="bnwrap">
 
-                        <img src="/Public/Files/Upload/{$val['img_url']}"/>
+                        <img class="lazy" data-original="/Public/Files/Upload/{$val['img_url']}" src="/Public/Image/zhanwei.jpg"/>
 
                     </div>
                     <p>{$val['article_title']}</p>
@@ -48,5 +48,10 @@
 </div>
 {include Public/footer.html}
 </body>
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    });
+</script>
 </html>
 
