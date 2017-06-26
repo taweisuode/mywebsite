@@ -4,7 +4,7 @@
         <div class="article-info">
             <img src="/Public/Files/Upload/{$detail['author_img']}" />
            <h1 class="title">{$detail['article_title']}</h1>
-            <div class="author">{$detail['article_author']} | {$detail['add_time']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: larger;color: red">原创</span></div>
+            <div class="author">{$detail['article_author']} | {$detail['add_time']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: larger;color: red">{if $detail['type']== 1}原创{elseif $detail['type']== 2}转载自&nbsp;&nbsp;&nbsp;<a href="{$detail['article_link']}" target="_blank">{$detail['article_link']}</a>{/if}</span></div>
         </div>
 
         <div class="content">
@@ -12,7 +12,7 @@
         </div>
 
         <div class="author">
-            作者：<a href="https://www.pengge.win/" target="_blank">庄景鹏 (https://www.pengge.win/)</a> - 博客站长 <br/>
+            作者：<a href="{$detail['article_link']}" target="_blank">{$detail['article_author']} ({$detail['article_link']})</a> - {if $detail['type']== 1}博客站长{else}博主{/if} <br/>
             <a href="https://www.pengge.win/" target="_blank"></a> <br/>
         </div>
 
