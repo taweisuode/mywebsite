@@ -24,7 +24,7 @@
     <![endif]-->
 </head>
 <body>
-<input type="hidden" id="loginSession" value="{$login_session}" />
+<input type="hidden" id="loginSession" value="{$session['user_id']}" />
 <script>
     var loginSession = document.getElementById("loginSession").value;
     if(loginSession == '')
@@ -42,7 +42,7 @@
                     <a class="user-menu dropdown-toggle" href="#" data-toggle="dropdown">
                         <img alt="Jason's Photo" src="/Public/Image/admin/avatars/user.jpg" class="nav-user-photo" />
 							<span id="user_info">
-								<small>Welcome,</small> {$Think.session.coolname}
+								<small>Welcome,</small> {$session['cool_name']}
 							</span>
                         <i class="icon-caret-down"></i>
                     </a>

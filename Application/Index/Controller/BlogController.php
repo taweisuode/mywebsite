@@ -11,6 +11,9 @@
             $detail_id = $_GET['id'];
             $studyModel = new StudyModel();
             $detail = $studyModel->get_detail($detail_id);
+            if(empty($detail)) {
+                $this->view->show('notFound');die;
+            }
             $this->load('Common/Function');
             $this->view->assign("detail",$detail);
             $this->view->show();

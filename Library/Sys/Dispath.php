@@ -53,6 +53,9 @@ class Dispath
         */
 
         $controller_class_name = $controller."Controller";
+        if (!class_exists($controller_class_name)) {
+            echo "请检查url中的控制器是否输入正确";die;
+        }
         $current_controller = new $controller_class_name();
 
         $action_class_name = $action."Action";

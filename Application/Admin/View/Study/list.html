@@ -20,25 +20,6 @@
             </ul>
             <!--.breadcrumb-->
 
-
-            <div id="nav-search">
-
-                <form class="form-search">
-
-									<span class="input-icon">
-
-										<input autocomplete="off" id="nav-search-input" type="text"
-                                               class="input-small search-query" placeholder="Search ..."/>
-
-										<i id="nav-search-icon" class="icon-search"></i>
-
-									</span>
-
-                </form>
-
-            </div>
-            <!--#nav-search-->
-
         </div>
 
         <!--/page-header-->
@@ -72,8 +53,8 @@
                             <td>{$val['article_author']}</td>
                             <td>{$val['type']}</td>
                             <td><img src="/Public/Files/Upload/{$val['author_img']}"
-                                     style="width: 100px;height: 100px"/></td>
-                            <td><img src="/Public/Files/Upload/{$val['img_url']}" style="width: 100px;height: 100px"/>
+                                     style="width: 70px;height: 70px"/></td>
+                            <td><img src="/Public/Files/Upload/{$val['img_url']}" style="width: 150px;height: 100px"/>
                             </td>
                             <td>{$val['tag']}</td>
                             <td>{$val['count']}</td>
@@ -86,10 +67,6 @@
                                                data-rel="tooltip" title="Edit" data-placement="left"><span
                                                 class="green"><i
                                                 class="icon-edit"></i></span></a></li>
-                                        <li><a href="/Admin/Study/detail?id={$val['id']}" class="tooltip-warning"
-                                               data-rel="tooltip" title="detail" data-placement="left"><span
-                                                class="blue"><i
-                                                class="icon-flag"></i></span> </a></li>
                                         <li><a href="/Admin/Study/delete?id={$val['id']}"
                                                onclick="if(confirm('确定要删除记录吗?')){return true;}return false;"
                                                class="tooltip-error" data-rel="tooltip" title="Delete"

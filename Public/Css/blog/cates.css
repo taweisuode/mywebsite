@@ -1,0 +1,31 @@
+.cates {
+    overflow: hidden;
+    font-size: 16px;
+    margin-bottom: 15px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    background: #fff;
+}
+.cates ul {
+    display: block;
+    white-space: nowrap;
+    height: 100%;
+    font-size: 0;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.cates li {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 16px;
+    margin: 10px 10px 10px 0;
+    height: 30px;
+    line-height: 30px;
+}
+.cates li.active {
+    border-bottom: 1px solid #ff4200;
+    font-weight: 400;
+}

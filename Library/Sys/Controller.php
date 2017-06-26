@@ -9,6 +9,7 @@ class Controller
     private $loadException  = "FrameException";
     private $hasException   = false;
     protected $view;
+    public static $session = array();
     public function __CONSTRUCT()
     {
     
@@ -20,6 +21,13 @@ class Controller
         set_exception_handler(array($this,"setExceptionHandler"));
 
         $this->view = new View();
+
+        session_start();
+        if(!empty($_SESSION)) {
+            self::$session = $_SESSION;
+
+        }
+
     }
     public function setExceptionHandler(Throwable $e = null) {
         $this->hasException = true;
