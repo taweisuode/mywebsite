@@ -48,6 +48,7 @@
                             <li><a href="#delete">删除</a></li>
                             <li><a href="#select">查询</a></li>
                             <li><a href="#update">修改</a></li>
+                            <li><a href="#getSql">获取sql语句</a></li>
                         </ul>
                         <div class="section" id="create">
                         <h2 name="create">新增</h2>
@@ -148,6 +149,12 @@
     $result = $this->db->exec($sql);
                         </code></pre>
                     </div>
+                        <div class="section" id="getSql">
+                            <h2>获得sql语句</h2>
+                        <pre><code>
+    $sql = $select->get_query_sql();
+                        </code></pre>
+                        </div>
                 </div>
                 {include Public/footer.html}
             </div>
