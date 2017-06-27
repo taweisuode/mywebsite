@@ -28,6 +28,8 @@
                 }
                 $img_url = $upload->getFileName();
                 $data["article_title"]      = $_POST["title"];
+                $data["keyword"]            = $_POST["keyword"];
+                $data["description"]        = $_POST["description"];
                 $data['type']               = $_POST["article_type"];
                 $data["article_link"]       = $_POST['article_link'];
                 $data["article_author"]     = !empty($_POST['author']) ? $_POST['author'] : "庄景鹏";
@@ -74,6 +76,8 @@
                 }
                 $data['id']                 = $_POST['id'];
                 $data["article_title"]      = $_POST["title"];
+                $data["keyword"]            = $_POST["keyword"];
+                $data["description"]        = $_POST["description"];
                 $data['type']               = $_POST["article_type"];
                 $data["article_link"]       = $_POST['article_link'];
                 $data["article_author"]     = !empty($_POST['author']) ? $_POST['author'] : "庄景鹏";

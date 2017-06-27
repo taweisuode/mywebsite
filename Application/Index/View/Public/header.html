@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="pengge的个人博客" />
-    <meta name="keywords" content="个人博客" />
-    <title>个人博客</title>
+    <title>{if $title != null}{$title}{else}庄景鹏个人博客{/if}</title>
+    <meta name="keywords" content="{if $keyword != null}{$keyword}{else}庄景鹏个人博客,php博客，高质量的个人博客网站{/if}" />
+    <meta name="description" content="{if $description != null}{$description}{else}庄景鹏个人博客,我会原创以及转载更多高质量的文章分享给大家，大家可以扫描右方二维码进行交流{/if}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="baidu-site-verification" content="ikDgBYtLtX" />
     <link rel="shortcut icon" href="/Public/Image/icon.gif" type="image/x-icon">
