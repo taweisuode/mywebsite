@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fa95641-8213-4568-866b-34278b04f2a8" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Index/View/Blog/detail.html" afterPath="$PROJECT_DIR$/Application/Index/View/Blog/detail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Sitemap.xml" />
     </list>
     <ignored path="ppf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,16 +44,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Library/Sys/Compile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Index/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,14 +54,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Index/View/Blog/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92007107">
+            <state vertical-scroll-proportion="-21.583334">
               <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#article#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sitemap.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Sitemap.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -455,11 +455,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Application" />
       <recent name="$PROJECT_DIR$/Public/Files" />
       <recent name="$PROJECT_DIR$/Public/Library/jquery" />
       <recent name="$PROJECT_DIR$/Public/Image" />
       <recent name="$PROJECT_DIR$/Application/Admin/Model" />
-      <recent name="$PROJECT_DIR$/Public/Image/admin/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Public/Css/var_dump" />
@@ -617,13 +617,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Public/Css/var_dump/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/Css/var_dump/default.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -984,11 +977,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/View/Blog/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92007107">
+        <state vertical-scroll-proportion="-21.583334">
           <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#article#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Sitemap.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
