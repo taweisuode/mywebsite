@@ -12,7 +12,7 @@
         </div>
 
         <div class="author">
-            作者：<a href="{$detail['article_link']}" target="_blank">{$detail['article_author']} ({$detail['article_link']})</a> - {if $detail['type']== 1}博客站长{else}博主{/if} <br/>
+            作者：<a href="{if $detail['article_link'] != null}{$detail['article_link']}{else}https://www.pengge.win/{/if}" target="_blank">{$detail['article_author']} ({if $detail['article_link'] != null}{$detail['article_link']}{else}https://www.pengge.win/{/if})</a> - {if $detail['type']== 1}博客站长{else}博主{/if} <br/>
             <a href="https://www.pengge.win/" target="_blank"></a> <br/>
         </div>
 
