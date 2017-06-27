@@ -16,7 +16,7 @@
             }
             $this->load('Common/Function');
             $this->view->assign("detail",$detail);
-            $this->view->assign("title","{$detail['title']}--庄景鹏个人博客");
+            $this->view->assign("title","{$detail['article_title']}--庄景鹏个人博客");
             $this->view->assign("keyword","{$detail['keyword']},庄景鹏个人博客,php博客，高质量的个人博客网站");
             $this->view->assign("description","{$detail['description']}");
 

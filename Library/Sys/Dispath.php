@@ -48,7 +48,7 @@ class Dispath
         //增加自动加载类这个方式加载 controller，model
         spl_autoload_register(array($this, 'loadClass'));
         /*
-        *  加载application 下面的所有Controller.php文件 并实例化这个类 
+        *  加载application 下面的所有Controller.php文件 并实例化这个类
         *  并访问其Action方法
         */
 
@@ -61,7 +61,7 @@ class Dispath
         $action_class_name = $action."Action";
         $current_controller->$action_class_name();
     }
-    public static function init() 
+    public static function init()
     {
         //常用getInstance()方法进行实例化单例类，通过instanceof操作符可以检测到类是否已经被实例化
         if(!(self::$static_resource instanceof self))
@@ -69,7 +69,7 @@ class Dispath
             self::$static_resource = new self();
 
         }
-        return self::$static_resource;  
+        return self::$static_resource;
     }
     private  function  __clone()
     {
