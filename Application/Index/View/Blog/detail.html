@@ -16,9 +16,7 @@
             <a href="https://www.pengge.win/" target="_blank"></a> <br/>
         </div>
 
-        <!-- UY BEGIN -->
-        <div id="uyan_frame"></div>
-
+        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     </article>
 
 {include Public/sidebar.html}
@@ -47,8 +45,15 @@
         document.write('<script src="' + src + '" id="sozz"><\/script>');
     })();
 </script>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2137577"></script>
-<!-- UY END -->
+<script>
+    var cloudTieConfig = {
+        url: document.location.href,
+        sourceId: "",
+        productKey: "dfd4c02580fa4c49843511eeb89ff1dc",
+        target: "cloud-tie-wrapper"
+    };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 </body>
 </html>
 
