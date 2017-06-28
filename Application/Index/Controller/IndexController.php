@@ -10,7 +10,7 @@
             $indexModel = new IndexModel();
             $movie_list = $indexModel->test();
 
-            $fruit = array("loving"=>'banana',"hating"=>'apple',"no_sense"=>'orange');
+            $fruit = array("loving"=>'aaaa',"hating"=>'apple',"no_sense"=>'orange');
             $test = array(
                 "aaa" => array(
                     "yes" => "no",
@@ -25,6 +25,7 @@
             $this->view->assign("fruit",$fruit);
             $this->view->assign("test",$test);
             $this->view->assign("result","hello");
+            $this->view->set_compile("111");
             $this->view->show();
         }
         public function vardumpAction() {
