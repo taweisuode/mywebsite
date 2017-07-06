@@ -16,7 +16,7 @@
             <a href="https://www.ci92.com/" target="_blank"></a> <br/>
         </div>
 
-        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+        <div id="SOHUCS" sid="{$detail['id']}"></div>
     </article>
 
 {include Public/sidebar.html}
@@ -25,35 +25,13 @@
 <script>
     hljs.initHighlightingOnLoad();
 </script>
-<script>
-    (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https'){
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else{
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: 'cyt4A398W',
+        conf: 'e93c80b0475405d28ba262ad0d5f34f9'
+    });
 </script>
-<script>
-    (function(){
-        var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?c6007323ce94ba88a0f3df50f29f1f5c":"https://jspassport.ssl.qhimg.com/11.0.1.js?c6007323ce94ba88a0f3df50f29f1f5c";
-        document.write('<script src="' + src + '" id="sozz"><\/script>');
-    })();
-</script>
-<script>
-    var cloudTieConfig = {
-        url: document.location.href,
-        sourceId: "",
-        productKey: "dfd4c02580fa4c49843511eeb89ff1dc",
-        target: "cloud-tie-wrapper"
-    };
-</script>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 </body>
 </html>
 
