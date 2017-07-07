@@ -19,12 +19,12 @@
                 $this->load("Common/upload");
                 $upload = new FileUpload();
                 if(!$upload->upload('author_img')) {
-                    echo "<script>alert('上传作者头像失败！');history.go(-1);";die;
+                    echo "<script>alert('上传作者头像失败！');history.go(-1);</script>";die;
                 }
                 $author_img = $upload->getFileName();
 
                 if(!$upload->upload('img_url')) {
-                    echo "<script>alert('上传文章缩略图失败！');history.go(-1);";die;
+                    echo "<script>alert('上传文章缩略图失败！');history.go(-1);</script>";die;
                 }
                 $img_url = $upload->getFileName();
                 $data["article_title"]      = $_POST["title"];
