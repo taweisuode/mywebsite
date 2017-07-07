@@ -6,7 +6,7 @@
             <ul style="padding-left:1%">
                 <li class="cate-menu-item {if $tag == null}active{/if}"><a href="/Index/Blog/list" class="cate-menu-link">全部文章</a></li>
                 {foreach name=$tagList item=key value=val}
-                    <li class="cate-menu-item {if $tag == $val['tag']}active{/if}"><a href="/Index/Blog/list?tag={$val['tag']}" class="cate-menu-link">{$val['tag']}</a></li>
+                    <li class="cate-menu-item {if $tag == $val['tag']}active{/if}"><a href="javascript:void(0)" tag="{$val['tag']}" onclick="go_href(this)" class="cate-menu-link">{$val['tag']}</a></li>
                 {/foreach}
                 <!--
                 <li class="cate-menu-item"><a href="/cates/性能优化/index.html" class="cate-menu-link">性能优化</a></li>
@@ -52,6 +52,15 @@
     $(function() {
         $("img.lazy").lazyload({effect: "fadeIn"});
     });
+</script>
+<script>
+    function go_href(obj) {
+        var tag = $(obj).attr("tag");
+        window.location.href = '/Index/Blog/list?tag='+encodeURI(encodeURI(URLencode(tag)));
+    }
+    function URLencode(sStr) {
+        return sStr.replace(/\+/g, '%2B').replace(/\"/g,'%22').replace(/\'/g, '%27').replace(/\//g,'%2F');
+    }
 </script>
 </html>
 

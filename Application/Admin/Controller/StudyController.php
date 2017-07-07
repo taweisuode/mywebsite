@@ -45,7 +45,7 @@
                 if($arr) {
                     echo "<script>alert('发表成功！');window.location.href='/Admin/Study/list'</script>";
                 }else {
-                    echo "<script>alert('发表失败！');history.go(-1);";
+                    echo "<script>alert('发表失败！');history.go(-1);</script>";
                 }
             }
             $this->view->assign("tag",$tagList);
