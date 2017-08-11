@@ -4,12 +4,9 @@
 */
 
 $config['redis']	= array (
-    'default'	=> array (
-        'host'		=> '192.168.2.234',
+        'host'		=> '127.0.0.1',
         'port'		=> 6379,
-        'password'	=> null,
+        'password'	=> 'pengge',
         'timeout'	=> 0
-    ),
 );
-
 ?>

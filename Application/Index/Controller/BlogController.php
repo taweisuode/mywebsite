@@ -4,10 +4,15 @@
  * @desc 博客总控制器
  */
     class BlogController extends Controller {
+        private  $redis = "";
+        public function __CONSTRUCT() {
+            parent::__CONSTRUCT();
+            $this->redis = $this->connectDb("redis");
+        }
         /**
          * @desc 博客详情页
          */
-        Public function detailAction() {
+        public function detailAction() {
             $detail_id = $_GET['id'];
             $studyModel = new StudyModel();
             $detail = $studyModel->get_detail($detail_id);
