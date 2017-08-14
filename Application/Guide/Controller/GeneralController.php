@@ -37,5 +37,8 @@
         public function commonAction() {
             $this->view->show();
         }
+        public function cacheAction() {
+            $this->view->show();
+        }
     }
 ?>
