@@ -7,7 +7,7 @@
         private  $redis = "";
         public function __CONSTRUCT() {
             parent::__CONSTRUCT();
-            $this->redis = $this->connectDb("redis");
+            //$this->redis = $this->connectDb("redis");
         }
         /**
          * @desc 博客详情页
