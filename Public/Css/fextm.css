@@ -62,7 +62,7 @@ article blockquote p { text-indent: 1.5em; margin: 0 !important; }
 .post-list { margin: 0; padding: 0; }
 .post-list::after { content: ""; display: table; clear: both; height: 0; overflow: hidden; font-size: 0; }
 .post-list li { list-style: none; float: left; margin: -3px 0 40px 14px; padding-bottom: 19px; width: 280px; border: 3px solid #f8f8f8; background: #ffffff; }
-.post-list li .bnwrap { width: 100%; height: 200px; overflow: hidden; }
+.post-list li .bnwrap { width: 100%; height: 150px; overflow: hidden; }
 .post-list li .bnwrap img { width: 100%; height: 100%; }
 .post-list li p { line-height: 30px; color: #5a5a5a; margin: 5px 0; padding: 0 10px; text-overflow: ellipsis; width: 80%; white-space: nowrap; overflow: hidden; }
 .post-list li .date { font-size: 10px; color: #999999; padding: 0 10px; }
