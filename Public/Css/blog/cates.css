@@ -10,7 +10,6 @@
 .cates ul {
     display: block;
     white-space: nowrap;
-    height: 100%;
     font-size: 0;
     position: relative;
     -webkit-overflow-scrolling: touch;
