@@ -10,9 +10,15 @@ class Model extends Pdo_Abstract
     protected $table_name;
     private $strDsn;
     public $db;
-    public function __CONSTRUCT($model_name = "") {
+    public function __CONSTRUCT($conf = array()) {
         include APPLICATION_PATH."/Config/Config.php";
-        $this->db = $this::Db_init();
+        $this->db = $this::Db_init($conf);
+    }
+    public function loadDataConfig($configName = "") {
+        if(!empty($configName)) {
+            include APPLICATION_PATH."/Config/Database.php";
+            return $config['mysql'][$configName];
+        }
     }
     public function exec($sql, $debug=false)
     {

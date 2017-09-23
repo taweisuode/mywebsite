@@ -18,16 +18,18 @@ class Pdo_Abstract
 
     public $DbSqlArr = array();
 
-    private function __CONSTRUCT() {
-        include APPLICATION_PATH . "/Config/Config.php";
+    private function __CONSTRUCT($conf = array()) {
         include APPLICATION_PATH . "/Config/Database.php";
+        if(empty($conf)) {
+            $conf = $config['mysql']['default'];
+        }
         try {
             //mssql 需要用dblib
             // 连接数据库的字符串定义
-            $this->strDsn = "mysql:host=" . $config['mysql']['host'] . ";dbname=" . $config['mysql']['dbname'];
-            $db = new PDO($this->strDsn, $config['mysql']['username'], $config['mysql']['password']);
+            $this->strDsn = "mysql:host=" . $conf['host'] . ";dbname=" . $conf['dbname'];
+            $db = new PDO($this->strDsn, $conf['username'], $conf['password']);
             $db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
-            $db->query("set names " . $config['mysql']['charset']);
+            $db->query("set names " . $conf['charset']);
             $this->DbConnect = $db;
         } catch (PDOException $e) {
             var_dump($e->getMessage());
@@ -35,9 +37,9 @@ class Pdo_Abstract
         }
     }
 
-    public static function Db_init() {
+    public static function Db_init($conf = array()) {
         if (self::$getInstance === null) {
-            self::$getInstance = new self();
+            self::$getInstance = new self($conf);
         }
         return self::$getInstance;
     }
@@ -90,7 +92,11 @@ class Pdo_Abstract
     }
 
     public function limit($offset = '0', $rows = "") {
-        $this->DbSqlArr['_limit'] = " limit " . $offset . "," . $rows;
+        if($rows) {
+            $this->DbSqlArr['_limit'] = " limit " . $offset . "," . $rows;
+        }else {
+            $this->DbSqlArr['_limit'] = " limit " . $offset;
+        }
         return $this;
     }
 

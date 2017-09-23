@@ -1,0 +1,75 @@
+{include Public/header.html}
+<div class="container-fluid" id="main-container">
+    <a href="#" id="menu-toggler"><span></span></a><!-- menu toggler -->
+    {include Public/nav.html}
+
+
+    <div id="main-content" class="clearfix">
+
+
+        <div id="breadcrumbs">
+
+            <ul class="breadcrumb">
+
+                <li><i class="icon-home"></i> <a href="__APP__/Index/index">Home</a><span class="divider"><i
+                        class="icon-angle-right"></i></span></li>
+
+                <li class="active">首页推荐图片添加</li>
+            </ul>
+            <!--.breadcrumb-->
+        </div>
+        <!--#breadcrumbs-->
+        <!-- PAGE CONTENT BEGINS HERE -->
+        <div class="page-content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form id="myform" name="myform" class="form-horizontal border" method="post" action="/Admin/App/recommendImageAdd" enctype="multipart/form-data" >
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>图片名称：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="title" name="img_name" ng-model="product.tag" class="col-xs-6"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>推荐图片：</label>
+                            <div id="preview2">
+                                <img id="imghead" width="20%" height="auto" border="0" src="/Public/Image/admin/images/default.png" style="margin-left: 2%;">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="file" name="img_url" onchange="previewImage(this,'preview2','imghead')" style="margin-left: 22%;margin-top: 20px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>图片链接地址：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="img_link" name="img_link" ng-model="product.tag" class="col-xs-6"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label no-padding-right"><span class="red">*</span>排序：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="sort" name="sort" ng-model="product.tag" class="col-xs-6"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-10 col-xs-offset-2">
+                                <button id="save" class="btn btn-sm btn-info">
+                                    <i class="ace-icon fa fa-check"></i>&nbsp;保　存&nbsp;
+                                </button>　　
+                                <button class="btn btn-sm btn-default" onclick="window.history.back();">
+                                    <i class="ace-icon fa fa-long-arrow-left"></i>&nbsp;返　回&nbsp;
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!--/.page-content-->
+    </div>
+</div>
+<!--/row-->
+{include Public/footer.html}
+</body>
+<script type="text/javascript" src="/Public/Library/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/Public/Js/admin/app.add.update.js"></script>
+</html>
