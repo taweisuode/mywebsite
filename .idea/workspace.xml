@@ -28,16 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.125">
-              <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="meaning.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/meaning.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,8 +101,18 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Config/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.02538071">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Config/Database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -163,7 +163,6 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/App/recommendImageAdd.html" />
         <option value="$PROJECT_DIR$/application/admin/view/app/recommendImageAdd.html" />
         <option value="$PROJECT_DIR$/Library/Database/Pdo_Abstract.php" />
-        <option value="$PROJECT_DIR$/Application/Config/Database.php" />
         <option value="$PROJECT_DIR$/Application/Config/Database_default.php" />
         <option value="$PROJECT_DIR$/Application/Index/View/Blog/list.html" />
         <option value="$PROJECT_DIR$/Application/Index/View/Index/index.html" />
@@ -192,6 +191,7 @@
         <option value="$PROJECT_DIR$/Application/Guide/View/Overview/meaning.html" />
         <option value="$PROJECT_DIR$/Application/Guide/View/Overview/start.html" />
         <option value="$PROJECT_DIR$/Application/Guide/View/Public/nav.html" />
+        <option value="$PROJECT_DIR$/Application/Config/Database.php" />
       </list>
     </option>
   </component>
@@ -967,14 +967,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Index/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="52.625">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/Model/IndexModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="13.875">
@@ -1367,10 +1359,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Config/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Config/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.02538071">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
