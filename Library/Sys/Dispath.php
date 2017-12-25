@@ -43,7 +43,7 @@ class Dispath
 
         $module = ucfirst($module);
         $controller = ucfirst($controller);
-        $action = ucfirst($action);
+        $action = strtolower($action);
         $this::$current_module = $module;
         $this::$current_controller = $controller;
         $this::$current_action = $action;
