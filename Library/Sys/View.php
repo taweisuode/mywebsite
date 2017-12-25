@@ -3,8 +3,7 @@
  *  视图类 继承于 Template类
  *
  */
-class View extends Template
-{
+class View extends Template {
     /*
     public function show($file=null)
     {

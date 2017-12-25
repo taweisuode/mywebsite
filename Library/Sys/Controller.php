@@ -4,14 +4,12 @@
  *   所有的控制器都继承于他
  *   构造方法中需要实例化View类，并加载所有的该module下面的model.php文件
  */
-class Controller
-{
+class Controller {
     private $loadException  = "FrameException";
     private $hasException   = false;
     protected $view;
     public static $session = array();
-    public function __CONSTRUCT()
-    {
+    public function __CONSTRUCT() {
     
         //默认导入TestException异常类
         $this->load('Exception/'.$this->loadException);

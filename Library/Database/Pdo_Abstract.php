@@ -7,8 +7,7 @@
  *
  */
 
-class Pdo_Abstract
-{
+class Pdo_Abstract {
     public $select;
     protected $table_name;
     private $strDsn;

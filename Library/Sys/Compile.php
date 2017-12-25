@@ -4,8 +4,7 @@
  *  正则匹配式可拓展  可设定多个编译模版
  *
  */
-class Compile
-{
+class Compile {
     public $config = array(
         'compiledir' => 'Cache/',         //设置编译后存放的目录
         'suffix_cache' => '.htm',         //设置编译文件的后缀
@@ -14,8 +13,7 @@ class Compile
     public $compare_pattern = array();
     public $compare_destpattern = array();
     public $compare_include_pattern = "";
-    public function __CONSTRUCT()
-    {
+    public function __CONSTRUCT() {
         //添加include 模版
         $this->compare_pattern[] = '#\{include (.*?)\}#';
 
@@ -62,8 +60,7 @@ class Compile
      *   基本的编译功能实现 讲视图文件通过正则匹配编译并写入到php文件中
      *
      */
-    public function compile($pre_compile_file,$dest_compile_file)
-    {
+    public function compile($pre_compile_file,$dest_compile_file) {
         $compile_content = preg_replace($this->compare_pattern,$this->compare_destpattern,file_get_contents($pre_compile_file));
         file_put_contents($dest_compile_file,$compile_content);
     }

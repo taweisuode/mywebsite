@@ -6,8 +6,7 @@
  *
  */
 
-class Redis_Abstract
-{
+class Redis_Abstract {
     public $select;
     protected $table_name;
     public $redis;

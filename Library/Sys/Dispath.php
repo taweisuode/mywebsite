@@ -6,19 +6,16 @@
  *   并且将当前的module，controller，action 写入静态变量中
  *
  */
-class Dispath
-{
+class Dispath {
     private static $ignore_module = true;
     private static $static_resource;
     public  static $current_module;
     public  static $current_controller;
     public  static $current_action;
-    private final function __construct()
-    {
+    private final function __construct() {
         $url = $_SERVER["REQUEST_URI"];
         $module_controller_action = explode('/',$url);
-        if(in_array("ppf",$module_controller_action))
-        {
+        if(in_array("ppf",$module_controller_action)) {
             $key = array_search("ppf",$module_controller_action);
         }
         //这里加入默认忽略module方式
@@ -64,23 +61,19 @@ class Dispath
         $action_class_name = $action."Action";
         $current_controller->$action_class_name();
     }
-    public static function init()
-    {
+    public static function init() {
         //常用getInstance()方法进行实例化单例类，通过instanceof操作符可以检测到类是否已经被实例化
-        if(!(self::$static_resource instanceof self))
-        {
+        if(!(self::$static_resource instanceof self)) {
             self::$static_resource = new self();
 
         }
         return self::$static_resource;
     }
-    private  function  __clone()
-    {
+    private  function  __clone() {
         echo "该dispath类禁止被克隆";
     }
     // 自动加载控制器和模型类
-    private static function loadClass($class)
-    {
+    private static function loadClass($class) {
         $controllers = APPLICATION_PATH.'/'.Dispath::$current_module."/Controller/".$class.".php";
         $models = APPLICATION_PATH.'/'.Dispath::$current_module."/Model/".$class.".php";
 

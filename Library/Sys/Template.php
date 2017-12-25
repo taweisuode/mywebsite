@@ -9,8 +9,7 @@
  *  构造函数中加载编译类Compile
  */
 
-class Template
-{
+class Template {
     protected $compile;
     public $value = array();
     public $config = array(

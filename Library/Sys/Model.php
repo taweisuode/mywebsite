@@ -5,8 +5,7 @@ require_once(PPF_PATH."/Library/Database/Pdo_Abstract.php");
  *  主要是pdo_mysql的封装
  *
  */
-class Model extends Pdo_Abstract
-{
+class Model extends Pdo_Abstract {
     protected $table_name;
     private $strDsn;
     public $db;
@@ -20,8 +19,7 @@ class Model extends Pdo_Abstract
             return $config['mysql'][$configName];
         }
     }
-    public function exec($sql, $debug=false)
-    {
+    public function exec($sql, $debug=false) {
         if($debug == true)
         {
             var_dump($sql);die;
@@ -31,20 +29,16 @@ class Model extends Pdo_Abstract
         }
         return $result;
     }
-    public function beginTransaction()
-    {
+    public function beginTransaction() {
         $this->db->beginTransaction();
     }
-    public function rollback()
-    {
+    public function rollback() {
         $this->db->rollback();
     }
-    public function commit()
-    {
+    public function commit() {
         $this->db->commit();
     }
-    public function destruct()
-    {
+    public function destruct() {
         $this->db = null;
     }
 }
