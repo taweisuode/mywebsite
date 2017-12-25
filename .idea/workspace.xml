@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fa95641-8213-4568-866b-34278b04f2a8" name="默认的" comment="" />
+    <list default="true" id="7fa95641-8213-4568-866b-34278b04f2a8" name="默认的" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Sys/Dispath.php" afterPath="$PROJECT_DIR$/Library/Sys/Dispath.php" />
+    </list>
     <ignored path="ppf.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,16 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="meaning.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/meaning.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.25">
-              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="start.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Guide/View/Overview/start.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -98,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Config/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.02538071">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
@@ -113,6 +105,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-11.25">
               <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dispath.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Library/Sys/Dispath.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31746033">
+              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -156,7 +158,6 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/App/recommendImageUpdate.html" />
         <option value="$PROJECT_DIR$/Application/Index/View/Blog/detail.html" />
         <option value="$PROJECT_DIR$/Library/Sys/HashTable.php" />
-        <option value="$PROJECT_DIR$/Library/Sys/Dispath.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/AppController.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/LoginController.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/StudyController.php" />
@@ -192,6 +193,7 @@
         <option value="$PROJECT_DIR$/Application/Guide/View/Overview/start.html" />
         <option value="$PROJECT_DIR$/Application/Guide/View/Public/nav.html" />
         <option value="$PROJECT_DIR$/Application/Config/Database.php" />
+        <option value="$PROJECT_DIR$/Library/Sys/Dispath.php" />
       </list>
     </option>
   </component>
@@ -278,11 +280,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
+              <option name="myItemId" value="Library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FIles" />
+              <option name="myItemId" value="Sys" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,15 +298,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FIles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Upload" />
+              <option name="myItemId" value="Library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -967,14 +961,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Index/Model/IndexModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.875">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/Model/StudyModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.375">
@@ -1359,6 +1345,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Config/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Config/Database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25">
@@ -1367,10 +1361,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Config/.gitignore">
+    <entry file="file://$PROJECT_DIR$/Library/Sys/Dispath.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02538071">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.31746033">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
           <folding />
         </state>
       </provider>
