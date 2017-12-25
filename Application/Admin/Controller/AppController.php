@@ -28,7 +28,7 @@
 
                 $arr = $this->recommendImageModel->addContent($data);
                 if($arr) {
-                    echo "<script>alert('发表成功！');window.location.href='/Admin/App/recommendImageList'</script>";
+                    echo "<script>alert('发表成功！');window.location.href='/admin/app/recommendImageList'</script>";
                 }else {
                     echo "<script>alert('发表失败！');history.go(-1);</script>";
                 }
@@ -59,9 +59,9 @@
                 $data["createtime"]= date("Y-m-d H:i:s");
                 $arr = $this->recommendImageModel->updateContent($data);
                 if($arr) {
-                    echo "<script>alert('修改成功！');window.location.href='/Admin/App/recommendImageList'</script>";
+                    echo "<script>alert('修改成功！');window.location.href='/admin/app/recommendImageList'</script>";
                 }else {
-                    echo "<script>alert('修改失败！');window.location.href='/Admin/App/recommendImageList'</script>";
+                    echo "<script>alert('修改失败！');window.location.href='/admin/app/recommendImageList'</script>";
                 }
             }
             $this->view->assign('detail',$detail);
@@ -71,7 +71,7 @@
             $id = $_GET['id'];
             $result = $this->recommendImageModel->delete($id);
             if($result > 0) {
-                echo "<script>alert('删除成功！');window.location.href='/Admin/App/recommendImageList'</script>";
+                echo "<script>alert('删除成功！');window.location.href='/admin/app/recommendImageList'</script>";
             }else {
                 echo "<script>alert('删除失败！');history.go(-1);";
             }

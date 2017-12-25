@@ -13,7 +13,7 @@
                 $_SESSION['user_id'] = $result['user_id'];
                 $_SESSION['user_name'] = $result['user_name'];
                 $_SESSION['cool_name'] = $result['cool_name'];
-                echo "<script>alert('登陆成功！');window.location.href='/Admin/Index/index';</script>";
+                echo "<script>alert('登陆成功！');window.location.href='/admin/index/index';</script>";
             }else {
                 echo "<script>alert('用户名或密码错误！');window.history.go(-1);</script>";
             }
@@ -25,7 +25,7 @@
         {
             session_start();
             session_destroy();
-            echo "<script>alert('登出成功！');window.location.href='/Admin/Login/index';</script>";
+            echo "<script>alert('登出成功！');window.location.href='/admin/login/index';</script>";
         }
     }
 ?>

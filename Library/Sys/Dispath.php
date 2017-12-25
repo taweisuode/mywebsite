@@ -41,9 +41,9 @@ class Dispath
             $action = $actionArr[0];
         }
 
-        $this::$current_module = $module;
-        $this::$current_controller = $controller;
-        $this::$current_action = $action;
+        $this::$current_module = ucfirst($module);
+        $this::$current_controller = ucfirst($controller);
+        $this::$current_action = ucfirst($action);
 
         //增加自动加载类这个方式加载 controller，model
         spl_autoload_register(array($this, 'loadClass'));

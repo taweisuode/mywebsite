@@ -43,7 +43,7 @@
 
                 $arr = $this->studyModel->addContent($data);
                 if($arr) {
-                    echo "<script>alert('发表成功！');window.location.href='/Admin/Study/list'</script>";
+                    echo "<script>alert('发表成功！');window.location.href='/admin/study/list'</script>";
                 }else {
                     echo "<script>alert('发表失败！');history.go(-1);</script>";
                 }
@@ -89,9 +89,9 @@
                 $data["update_time"]        = date("F d,Y",time());
                 $arr = $this->studyModel->updateContent($data);
                 if($arr) {
-                    echo "<script>alert('发表成功！');window.location.href='/Admin/Study/list'</script>";
+                    echo "<script>alert('发表成功！');window.location.href='/admin/study/list'</script>";
                 }else {
-                    echo "<script>alert('发表失败！');window.location.href='/Admin/Study/list'</script>";
+                    echo "<script>alert('发表失败！');window.location.href='/admin/study/list'</script>";
                 }
             }
             $this->view->assign("tag",$tagList);
