@@ -105,7 +105,7 @@
             $.ajax({
             type: "POST",
             data: "str="+content,
-            url: '/Index/Index/do_var_dump',
+            url: '/index/index/do_var_dump',
             async:false,
             success: function(data) {
                 var str = data.trim().replace(/\n/g,"<br />").trim();

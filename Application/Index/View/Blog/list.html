@@ -4,7 +4,7 @@
     <div class="post-lists">
         <nav class="cates">
             <ul style="padding-left:1%">
-                <li class="cate-menu-item {if $tag == null}active{/if}"><a href="/Index/Blog/list" class="cate-menu-link">全部文章</a></li>
+                <li class="cate-menu-item {if $tag == null}active{/if}"><a href="/index/blog/list" class="cate-menu-link">全部文章</a></li>
                 {foreach name=$tagList item=key value=val}
                     <li class="cate-menu-item {if $tag == $val['tag']}active{/if}"><a href="javascript:void(0)" tag="{$val['tag']}" onclick="go_href(this)" class="cate-menu-link">{$val['tag']}</a></li>
                 {/foreach}
@@ -20,7 +20,7 @@
         <ul class="post-list">
             {foreach name=$list item=key value=val}
             <li title="{$val['article_title']}">
-                <a href="/Index/Blog/detail?id={$val['id']}">
+                <a href="/index/blog/detail?id={$val['id']}">
 
                     <div class="bnwrap">
 
@@ -56,7 +56,7 @@
 <script>
     function go_href(obj) {
         var tag = $(obj).attr("tag");
-        window.location.href = '/Index/Blog/list?tag='+encodeURI(encodeURI(URLencode(tag)));
+        window.location.href = '/index/blog/list?tag='+encodeURI(encodeURI(URLencode(tag)));
     }
     function URLencode(sStr) {
         return sStr.replace(/\+/g, '%2B').replace(/\"/g,'%22').replace(/\'/g, '%27').replace(/\//g,'%2F');

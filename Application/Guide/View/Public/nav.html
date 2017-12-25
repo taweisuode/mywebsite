@@ -17,10 +17,10 @@
         {if !empty($main_node_arr)}
         {foreach name=$main_node_arr item=key value=val}
         <ul>
-            <li {if $val['controller'] == Dispath::$current_controller}class="toctree-l1 current" {else}class="toctree-l1" {/if}><a class="reference internal" href="/Guide/{$val['controller']}/{$val['action']}">{$val['directory_name']}</a><ul class="current">
+            <li {if $val['controller'] == Dispath::$current_controller}class="toctree-l1 current" {else}class="toctree-l1" {/if}><a class="reference internal" href="/guide/{$val['controller']}/{$val['action']}">{$val['directory_name']}</a><ul class="current">
                 {if !empty($val['children_node'])}
                 {foreach name=$val['children_node'] item=k value=v}
-                <li {if $v['action'] == Dispath::$current_action}class="toctree-l2 current" {else}class="toctree-l2"{/if} ><a class="reference internal" href="/Guide/{$v['controller']}/{$v['action']}">{$v['directory_name']}</a></li>
+                <li {if $v['action'] == Dispath::$current_action}class="toctree-l2 current" {else}class="toctree-l2"{/if} ><a class="reference internal" href="/guide/{$v['controller']}/{$v['action']}">{$v['directory_name']}</a></li>
                 {/foreach}
                 {/if}
             </ul>
