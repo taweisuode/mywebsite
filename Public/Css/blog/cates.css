@@ -28,3 +28,48 @@
     border-bottom: 1px solid #ff4200;
     font-weight: 400;
 }
+.posts-nav-wrap {
+    text-align: center;
+    width: 100%;
+    height: 53px;
+    clear: both;
+}
+.posts-nav li {
+    margin:0 13px 0 0;
+    display:inline-block;
+    box-shadow:0 5px 10px 0 rgba(0,0,0,.05);
+}
+.posts-nav li a {
+    text-indent:-9999em;
+    text-align:left;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    display:inline-block;
+    -moz-transition:all .20s ease-in-out;
+    -webkit-transition:all .20s ease-in-out;
+    transition:all .20s ease-in-out;
+}
+.posts-nav .next a {
+    background:#999999 url(../../Image/blog/ico-pagination-arrow-next.png) no-repeat center;
+    width:144px;
+    height:53px;
+    line-height:53px;
+}
+.posts-nav .next a:hover {
+    text-decoration:none;
+    background:#ffe900 url(../../Image/blog/ico-pagination-arrow-next.png) no-repeat 110px center;
+}
+.posts-nav .previous a {
+    width:64px;
+    height:53px;
+    line-height:53px;
+    background-color:#999999;
+    background-image:url(../../Image/blog/ico-pagination-arrow-previous.png);
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.posts-nav .previous a:hover {
+    text-decoration:none;
+    background:#ffe900 url(../../Image/blog/ico-pagination-arrow-previous.png) no-repeat 12px center;
+}

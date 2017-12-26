@@ -44,11 +44,22 @@
 
     </div>
     {include Public/sidebar.html}
-
+    <div class="posts-nav-wrap">
+        <ul class="posts-nav">
+            <li class="previous"><a href="search?seo=分页&amp;PageNo=5" class="previous">←</a></li>
+            <li class="next"><a href="search?seo=分页&amp;PageNo=7" class="next">←</a></li>
+        </ul>
+    </div>
 </div>
 {include Public/footer.html}
 </body>
+<script src="/Public/Js/blog/jquery.jqpagination.min.js"></script>
 <script type="text/javascript" charset="utf-8">
+    $('.pagination').jqPagination({
+        paged: function(page) {
+            // 分页事件
+        }
+    });
     $(function() {
         $("img.lazy").lazyload({effect: "fadeIn"});
     });

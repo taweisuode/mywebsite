@@ -6,14 +6,16 @@
  */
 class Controller {
     private $loadException  = "FrameException";
+    protected $validate;
     private $hasException   = false;
     protected $view;
     public static $session = array();
     public function __CONSTRUCT() {
-    
-        //默认导入TestException异常类
-        $this->load('Exception/'.$this->loadException);
-        $this->load('Common/ErrorCode');
+
+        //默认导入异常类,验证类以及公共方法
+        $loadArr = array('Exception/'.$this->loadException,'Common/Validate','Common/Function','Common/ErrorCode');
+        $this->load($loadArr);
+        $this->validate = new Validate();
         //设置异常处理函数
         restore_exception_handler();
         set_exception_handler(array($this,"setExceptionHandler"));

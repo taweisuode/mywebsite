@@ -13,6 +13,9 @@ class IndexModel extends Model
         $result = $select->fetchAll();
         return $result;
     }
+    public function getBlogList() {
+
+    }
     public function test() {
         /*
             $sql = "select * from t_sys_user where user_sn = '".$user_sn."'";

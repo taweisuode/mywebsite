@@ -29,16 +29,22 @@
         }
         public function listAction() {
             //正则替换url中的特殊字符
-            $tag = $this->replaceAll($_GET['tag']);
+            $data = $_GET;
+            $data['tag'] = $this->replaceAll($data['tag']);
+            $validate_params = array(
+                'tag#string',
+                'offset#int'=> 0,
+            );
+            $validate_data = $this->validate->check($validate_params, $data);
             $indexModel = new IndexModel();
             $studyModel = new StudyModel();
-            $list = $indexModel->getIndexList($tag);
+            $list = $indexModel->getIndexList($validate_data);
             if(empty($list)) {
                 $this->view->show("NotFound");die;
             }
             $tagList =$studyModel->getTagList();
             $this->view->assign("list",$list);
-            $this->view->assign("tag",$tag);
+            $this->view->assign("tag",$validate_data['tag']);
             $this->view->assign("tagList",$tagList);
             $this->view->assign("title","文章列表--庄景鹏个人博客");
             $this->view->assign("keyword","庄景鹏个人博客,php博客，高质量的个人博客网站");
