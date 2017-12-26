@@ -46,8 +46,12 @@
     {include Public/sidebar.html}
     <div class="posts-nav-wrap">
         <ul class="posts-nav">
-            <li class="previous"><a href="search?seo=分页&amp;PageNo=5" class="previous">←</a></li>
-            <li class="next"><a href="search?seo=分页&amp;PageNo=7" class="next">←</a></li>
+            {if !empty($params['offset']) && $params['offset'] != 0}
+            <li class="previous"><a href="javascript:void(0)" onclick="previous({$params['offset'] })" class="previous">←</a></li>
+            {/if}
+            {if $params['offset']*$params['page_num']+$params['count'] < $params['total']}
+                <li class="next"><a href="javascript:void(0)" onclick="next({$params['offset'] })" class="next">←</a></li>
+            {/if}
         </ul>
     </div>
 </div>
@@ -63,6 +67,47 @@
     $(function() {
         $("img.lazy").lazyload({effect: "fadeIn"});
     });
+    //设置url中参数值
+    function setParam(param, value) {
+        var query = location.search.substring(1);
+        var p = new RegExp("(^|)" + param + "=([^&]*)(|$)");
+        if (p.test(query)) {
+            var firstParam = query.split(param)[0];
+            var secondParam = query.split(param)[1];
+            if (secondParam.indexOf("&") > -1) {
+                var lastPraam = secondParam.substring(secondParam.indexOf('&')+1);
+                return '?' + firstParam + param + '=' + value + '&' + lastPraam;
+            } else {
+                if (firstParam) {
+                    return '?' + firstParam + param + '=' + value;
+                } else {
+                    return '?' + param + '=' + value;
+                }
+            }
+        } else {
+            if (query == '') {
+                return '?' + param + '=' + value;
+            } else {
+                return '?' + query + '&' + param + '=' + value;
+            }
+        }
+    }
+    function previous($offset) {
+        var url = window.location.href; //获取当前url
+        if (url.indexOf("?")>0) {
+            url = url.split("?")[0];
+        }
+        //alert(url+setParam("money", par_value));
+        window.location.href = url + setParam("offset", $offset-1);
+    }
+    function next($offset) {
+        var url = window.location.href; //获取当前url
+        if (url.indexOf("?")>0) {
+            url = url.split("?")[0];
+        }
+        //alert(url+setParam("money", par_value));
+        window.location.href = url + setParam("offset", $offset+1);
+    }
 </script>
 <script>
     function go_href(obj) {

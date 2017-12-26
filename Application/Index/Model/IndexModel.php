@@ -2,6 +2,7 @@
 error_reporting(E_ALL ^ E_NOTICE);
 class IndexModel extends Model
 {
+    const PAGE_NUM = 12;
     protected $_tablename = 'phplist';
     public function getIndexList($tag = "") {
         $this->db->select("id,article_title,article_author,img_url,add_time");
@@ -9,12 +10,37 @@ class IndexModel extends Model
         if(!empty($tag)) {
             $this->db->where(array('tag'=>$tag));
         }
-        $select = $this->db->orderby("id","desc")->limit(12);
+        $select = $this->db->orderby("id","desc")->limit(self::PAGE_NUM);
         $result = $select->fetchAll();
         return $result;
     }
-    public function getBlogList() {
+    public function getBlogList($params = array()) {
+        $this->db->select("id,article_title,article_author,img_url,add_time");
+        $this->db->from($this->_tablename);
+        if(!empty($params['tag'])) {
+            $this->db->where(array('tag'=>$params['tag']));
+        }
 
+        $this->db->orderby("id","desc");
+        $offset = !empty($params['offset']) ? $params['offset'] : 0;
+        $select =  $this->db->limit($offset*self::PAGE_NUM,self::PAGE_NUM);
+        $result = $select->fetchAll();
+        return array(
+            'total' =>  $this->blogListCount($params),
+            'offset'=> $params['offset'],
+            'page_num'=> self::PAGE_NUM,
+            'data'=> $result,
+            'count' => count($result)
+        );
+    }
+    private function blogListCount($params = array()) {
+        $this->db->select("count(*) as count");
+        $this->db->from($this->_tablename);
+        if(!empty($params['tag'])) {
+            $this->db->where(array('tag'=>$params['tag']));
+        }
+        $result = $this->db->fetchRow();
+        return $result['count'];
     }
     public function test() {
         /*
