@@ -9,7 +9,7 @@ class IndexModel extends Model
         if(!empty($tag)) {
             $this->db->where(array('tag'=>$tag));
         }
-        $select = $this->db->orderby("id","desc");
+        $select = $this->db->orderby("id","desc")->limit(12);
         $result = $select->fetchAll();
         return $result;
     }
