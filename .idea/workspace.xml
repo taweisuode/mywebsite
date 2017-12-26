@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fa95641-8213-4568-866b-34278b04f2a8" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Index/Controller/BlogController.php" afterPath="$PROJECT_DIR$/Application/Index/Controller/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Index/Model/IndexModel.php" afterPath="$PROJECT_DIR$/Application/Index/Model/IndexModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Index/View/Public/header.html" afterPath="$PROJECT_DIR$/Application/Index/View/Public/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Index/View/Blog/list.html" afterPath="$PROJECT_DIR$/Application/Index/View/Blog/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/Css/blog/dracula.css" afterPath="$PROJECT_DIR$/Public/Css/blog/dracula.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Guide/View/Public/header.html" afterPath="$PROJECT_DIR$/Application/Guide/View/Public/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/Css/blog/theme.css" afterPath="$PROJECT_DIR$/Public/Css/blog/theme.css" />
     </list>
     <ignored path="ppf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +32,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IndexModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Index/Model/IndexModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.76719576">
+            <state vertical-scroll-proportion="18.125">
               <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dracula.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/Css/blog/dracula.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="787" selection-start-line="0" selection-start-column="787" selection-end-line="0" selection-end-column="787" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Blog/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Public/Css/blog/theme.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35992908">
+              <caret line="6" column="60984" selection-start-line="6" selection-start-column="60984" selection-end-line="6" selection-end-column="60984" />
               <folding />
             </state>
           </provider>
@@ -60,18 +98,8 @@
       <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.125">
-              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ErrorCode.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Library/Common/ErrorCode.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="20" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -107,16 +135,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Validate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Library/Common/Validate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -130,8 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/StudyController.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/App/recommendImageAdd.html" />
         <option value="$PROJECT_DIR$/application/admin/view/app/recommendImageAdd.html" />
         <option value="$PROJECT_DIR$/Application/Config/Database_default.php" />
@@ -168,7 +184,6 @@
         <option value="$PROJECT_DIR$/Library/Common/upload.php" />
         <option value="$PROJECT_DIR$/Public/Css/blog/highlight.min.css" />
         <option value="$PROJECT_DIR$/Public/Js/blog/highlight.min.js" />
-        <option value="$PROJECT_DIR$/Public/Css/blog/dracula.css" />
         <option value="$PROJECT_DIR$/Public/Css/base.css" />
         <option value="$PROJECT_DIR$/Application/Index/View/Index/index.html" />
         <option value="$PROJECT_DIR$/Public/Css/blog/cates.css" />
@@ -181,6 +196,9 @@
         <option value="$PROJECT_DIR$/Library/Database/Pdo_Abstract.php" />
         <option value="$PROJECT_DIR$/Application/Index/View/Blog/list.html" />
         <option value="$PROJECT_DIR$/Application/Index/Model/IndexModel.php" />
+        <option value="$PROJECT_DIR$/Public/Css/blog/dracula.css" />
+        <option value="$PROJECT_DIR$/Application/Guide/View/Public/header.html" />
+        <option value="$PROJECT_DIR$/Public/Css/blog/theme.css" />
       </list>
     </option>
   </component>
@@ -502,14 +520,6 @@
               <option name="myItemId" value="Index" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -525,7 +535,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
+              <option name="myItemId" value="Guide" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -533,7 +543,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
+              <option name="myItemId" value="Public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,7 +561,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
+              <option name="myItemId" value="Guide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -569,11 +583,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="Guide" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -782,20 +792,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Guide/View/General/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.75">
-          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/View/General/exception.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="68.25">
-          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Guide/View/General/controller.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-33.625">
@@ -876,13 +872,6 @@
     <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="8.25">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1012,13 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Css/blog/dracula.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/Css/blog/highlight.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1136,14 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.125">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/View/Blog/list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.75">
@@ -1154,8 +1128,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/Model/IndexModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.76719576">
+        <state vertical-scroll-proportion="18.125">
           <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Css/blog/dracula.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="787" selection-start-line="0" selection-start-column="787" selection-end-line="0" selection-end-column="787" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/View/Blog/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="20" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Guide/View/Public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Css/blog/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35992908">
+          <caret line="6" column="60984" selection-start-line="6" selection-start-column="60984" selection-end-line="6" selection-end-column="60984" />
           <folding />
         </state>
       </provider>
