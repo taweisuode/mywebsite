@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 class IndexModel extends Model
 {
     const PAGE_NUM = 12;
-    protected $_tablename = 'phplist';
+    protected $_tablename = 'article';
     public function getIndexList($tag = "") {
         $this->db->select("id,article_title,article_author,img_url,add_time");
         $this->db->from($this->_tablename);
