@@ -28,5 +28,6 @@ foreach($allFile as $key => $val)
     }   
 }   
 //初始化路由分发 根据request_uri来分发到各个控制器方法
+session_start();
 $dispath = Dispath::init();
 ?>
