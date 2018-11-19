@@ -4,6 +4,7 @@
  *  加载Library中的所有文件
  *  并初始化路由分发模块
  */
+session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 $path = str_replace(DIRECTORY_SEPARATOR,'/',dirname(__FILE__));
 define("PPF_PATH",$path);
@@ -28,6 +29,5 @@ foreach($allFile as $key => $val)
     }   
 }   
 //初始化路由分发 根据request_uri来分发到各个控制器方法
-session_start();
 $dispath = Dispath::init();
 ?>
