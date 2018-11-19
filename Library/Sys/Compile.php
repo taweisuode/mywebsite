@@ -14,6 +14,10 @@ class Compile {
     public $compare_destpattern = array();
     public $compare_include_pattern = "";
     public function __CONSTRUCT() {
+        $current_module = "'".Dispath::$current_module."'";
+        $current_controller = Dispath::$current_controller;
+        $current_action = Dispath::$current_action;
+
         //添加include 模版
         $this->compare_pattern[] = '#\{include (.*?)\}#';
 
@@ -37,7 +41,7 @@ class Compile {
 
         //以下是上面几个模版编译后的php语言实现
 
-        $this->compare_destpattern[] = "<?php include PPF_PATH.'/'.\$this->config['compiledir'].".Dispath::$current_module.".'/'.md5('".Dispath::$current_controller.'_'.Dispath::$current_action.'_'."\\1').'.php'; ?>";
+        $this->compare_destpattern[] = "<?php include PPF_PATH.'/'.\$this->config['compiledir'].".$current_module.".'/'.md5('".$current_controller.'_'.$current_action.'_'."\\1').'.php'; ?>";
 
         $this->compare_destpattern[] = "<?php echo $\\1;?>";
 
@@ -52,7 +56,7 @@ class Compile {
         $this->compare_destpattern[] = "<?php \\1 ";
         $this->compare_destpattern[] = "?>";
 
-        $this->compare_destpattern[] = '<?php include "'.APPLICATION_PATH.'/'.Dispath::$current_module.'/View/'.'\\1";?>';
+        $this->compare_destpattern[] = '<?php include "'.APPLICATION_PATH.'/'.$current_module.'/View/'.'\\1";?>';
 
         $this->compare_include_pattern = '#\{include (.*?)\}#';
     }
